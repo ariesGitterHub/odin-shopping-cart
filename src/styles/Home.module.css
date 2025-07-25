@@ -1,0 +1,48 @@
+.mainContainer {
+    height: fit-content;
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+   background: linear-gradient(0deg, var(--frog-white), var(--frog-lt));
+   /* background-color: transparent; */
+       border-radius: 1rem;
+           box-shadow: 5px 5px 100px 5px var(--frog-dk);
+    padding: 1rem;
+}
+
+.title {
+    color: var(--rose-dk);
+      /* color: var(--frog-black); */
+    font-family: var(--font-title);
+    text-align: center;
+} 
+
+.title p {
+    font-size: 1.5rem;
+    text-align: left;
+} 
+
+.title h1 {
+font-size: 2.75rem;
+
+    text-align: center;
+} 
+
+.imgContainer {
+    height: fit-content;
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.imgContainer img {
+    height: 15rem;
+    width: 15rem;
+    border-radius: 50%;
+    box-shadow: 5px 5px 100px 5px var(--frog-white);
+    margin-bottom: 1rem;
+    object-fit: contain;
+}

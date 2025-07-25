@@ -1,0 +1,83 @@
+
+
+
+:root {
+    /* --frog-dk: #7C8C00;
+    --frog-lt: #C6D57A; */
+    --frog-dk: #313D25;
+    --frog-lt: #BFCB99;
+    --frog-black: #060700;
+    --frog-white: #DADCD1;
+    --rose-dk: #BE3B65;
+    --rose-lt: #EDA1AE;
+    --font-title: "Slackey", sans-serif;
+    --font-text: "Dongle", sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  min-height: 100vh;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  background-color: var(--frog-white);
+  line-height: 1.5;
+}
+
+li {
+    list-style: none;
+}
+
+.footer {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: end;
+    justify-content: center;
+    font-family: var(--font-title);
+    font-size: 0.875rem;
+}
+
+.font-title {
+  font-family: "Slackey", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+.font-text {
+  font-family: "Dongle", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}

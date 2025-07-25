@@ -1,14 +1,18 @@
 import { Link } from "react-router-dom";
+import favIcon from "../assets/favIcon.svg";
+import styles from "../styles/Navbar.module.css";
 
 export default function Navbar() {
   return (
-    <nav>
+    <nav className={styles.navbar}>
       <ul>
         <li>
-          <Link to="/">Home</Link>
+          <Link to="/">
+          <img src={favIcon} alt="Cute frog head icon." />
+          </Link>
         </li>
         <li>
-          <Link to="/shop">About</Link>
+          <Link to="/shop">Shop</Link>
         </li>
         <li>
           <Link to="/about">About</Link>
