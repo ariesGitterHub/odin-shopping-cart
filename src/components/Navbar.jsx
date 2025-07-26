@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import favIcon from "../assets/favIcon.svg";
+import imgCart from "../assets/imgCart.svg";
 import styles from "../styles/Navbar.module.css";
 
 export default function Navbar() {
@@ -8,7 +9,7 @@ export default function Navbar() {
       <ul>
         <li>
           <Link to="/">
-          <img src={favIcon} alt="Cute frog head icon." />
+            <img src={favIcon} alt="Cute frog head icon." />
           </Link>
         </li>
         <li>
@@ -19,6 +20,9 @@ export default function Navbar() {
         </li>
         <li>
           <Link to="/contact">Contact</Link>
+        </li>
+        <li>
+          <img src={imgCart} alt="Shopping cart icon." />
         </li>
       </ul>
     </nav>
