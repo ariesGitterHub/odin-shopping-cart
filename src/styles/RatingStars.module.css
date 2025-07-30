@@ -1,0 +1,10 @@
+.ratingStarsSpan{
+display: flex;
+align-items: center;
+justify-content: start;
+}
+
+.ratingStarsSpan img {
+    height: 0.9rem;
+    width: auto;
+}

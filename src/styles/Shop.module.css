@@ -1,0 +1,15 @@
+.mainContainer {
+  height: fit-content;
+  width: fit-content;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  /* background: linear-gradient(0deg, var(--frog-white), var(--frog-lt)); */
+  /* background-color: transparent; */
+  border-radius: 1rem;
+
+  padding: 1rem;
+}

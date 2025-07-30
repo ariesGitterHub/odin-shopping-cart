@@ -1,27 +1,32 @@
 .navbar {
     height: fit-content;
-    width: 100vw;
+    /* width: 100%; */
     background-color: var(--rose-lt);
-    margin: 0.5rem 0 0.5rem 0;
-    padding: 0.75rem;
+    margin: 0;
+    padding: 0.5rem;
 }
 
 .navbar ul {
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-evenly;
-    /* gap: 1.25rem; */
+    justify-content: center;
+    gap: 1rem;
     font-family: var(--font-text);
-    font-size: 2rem;
+    font-size: 1rem;
 }
 
 .navbar a:link {
+    color: var(--rose-dk);
+    text-decoration: none;
+}
+.navbar a:visited {
+    color: var(--frog-black);
     text-decoration: none;
 }
 
 .navbar a:active {
-    color: red;
+    color: var(--frog-dk);
 }
 
 .navbar li:hover {

@@ -1,6 +1,4 @@
 
-
-
 :root {
     /* --frog-dk: #7C8C00;
     --frog-lt: #C6D57A; */
@@ -10,8 +8,15 @@
     --frog-white: #DADCD1;
     --rose-dk: #BE3B65;
     --rose-lt: #EDA1AE;
+  
     --font-title: "Slackey", sans-serif;
-    --font-text: "Dongle", sans-serif;
+    --font-text: "Rubik", sans-serif;
+    --font-dinojama: "Barrio", system-ui;;
+    --font-jammy-mart: "Mystery Quest", system-ui;
+    --font-mooshiDoo:  "Hanalei Fill", system-ui;
+    --font-plushies: "Matemasie", sans-serif;
+    --font-spanko: "Bangers", system-ui;
+    --
 }
 
 *,
@@ -65,8 +70,10 @@ li {
     flex-wrap: wrap;
     align-items: end;
     justify-content: center;
+    color: var(--frog-dk);
     font-family: var(--font-title);
-    font-size: 0.875rem;
+    font-size: 1rem;
+    margin: 1rem;
 }
 
 .font-title {
