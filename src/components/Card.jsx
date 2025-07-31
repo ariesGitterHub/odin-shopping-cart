@@ -1,19 +1,21 @@
 import styles from "../styles/Card.module.css";
 import RatingStars from "../utils/RatingStars";
 import ProductPrice from "./ProductPrice";
+import Dropdown from "./Dropdown";
 
 export default function Card({
-    id,
+  id,
   name,
   imgFront,
   imgRear,
   imgSizing,
   brand,
   stock,
+  stockNumber,
   availableSizes,
   rating,
   numberReviews,
-  price
+  price,
 }) {
   return (
     <div className={styles.cardContainer}>
@@ -59,10 +61,10 @@ export default function Card({
         {/* {availableSizes.map((sizes) => {
         <p className={styles.sizes}>Available in: {sizes}</p>    
         })} */}
-        {stock < 1 ? (
+        {stockNumber < 1 ? (
           <p className={styles.outOfStock}>out of stock</p>
         ) : (
-          <p className={styles.stock}>{stock} left</p>
+          <p className={styles.stockNumber}>{stockNumber} left</p>
         )}
         <div className={styles.sizes}>
           {availableSizes.length === 0 ? (
@@ -83,10 +85,26 @@ export default function Card({
           <p>({numberReviews} reviews)</p>
         </div>
         <div className={styles.priceContainer}>
-                  <div key={id} className={styles.price}>
-          <ProductPrice price={price} stock={stock} rating={rating} numberReviews={numberReviews} />
+          <div key={id} className={styles.price}>
+            <ProductPrice
+              price={price}
+              stockNumber={stockNumber}
+              rating={rating}
+              numberReviews={numberReviews}
+            />
+          </div>
         </div>
- </div>
+        <div className={styles.buttonContainer}>
+          {availableSizes.length > 0 && (
+            <Dropdown
+              label="Size"
+              options={availableSizes}
+              onSelect={(selectedSize) =>
+                console.log("Size selected:", selectedSize)
+              }
+            />
+          )}
+        </div>
       </div>
     </div>
   );

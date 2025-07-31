@@ -1,0 +1,42 @@
+/* styles/Dropdown.module.css */
+.dropdown {
+  position: relative;
+  display: inline-block;
+  color: var(--frog-black);  
+  font-family: var(--font-text);
+}
+
+.dropdownButton {
+    width: 4.5rem;
+  padding: 0.5rem;
+  border: 0.125rem solid var(--frog-black);
+  border-radius: 0.25rem;
+  background: var(--frog-lt);
+  
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+.dropdownList {
+    width: 4.5rem;
+    position: absolute;
+  margin-top: 0.3rem;
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+ 
+  list-style: none;
+  padding: 0;
+  text-transform: uppercase;
+
+  z-index: 1000;
+}
+
+.dropdownItem {
+  padding: 0.5rem;
+  cursor: pointer;
+}
+
+.dropdownItem:hover {
+  background-color: var(--frog-lt);
+}

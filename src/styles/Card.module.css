@@ -81,7 +81,7 @@
 }
 
 .detailsContainer,
-.priceContainer {
+.priceContainer, .buttonContainer {
   width: 18rem;
   display: flex;
   flex-direction: row;
@@ -106,19 +106,8 @@
      font-size: 1.25rem;
 }
 
-.stock,
-.sizes,
-.rating,
-.price {
-  /* background-color: var(--rose-lt);
-    border-radius: 1rem;
-     font-family: var(--font-text);  
-    font-size: 1rem;
-    font-weight: 400;
-    padding: 0.5rem; */
-}
 
-.stock,
+.stockNumber,
 .outOfStock,
 .sizes,
 .rating {
@@ -148,13 +137,17 @@
 }
 
 .sizeItem {
+  width: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background-color: white;
-  padding: 0.125rem 0.5rem;
-  border-radius: 50%;
-  font-size: 0.9rem;
+   border-radius: 50%;
+  font-size: 0.8rem;
   font-weight: bold;
-  text-align: center;
+   padding: 0.125rem 0.25rem;
+   /* text-align: center; */
   text-transform: uppercase;
   /* cursor: pointer; */
-  transition: background-color 0.3s ease;
+  /* transition: background-color 0.3s ease; */
 }

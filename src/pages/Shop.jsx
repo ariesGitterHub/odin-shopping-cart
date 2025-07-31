@@ -11,7 +11,30 @@ import Card from "../components/Card";
 
 export default function Shop() {
 
-  const onesies = [...inventory]
+// const onesies = [...inventory];
+
+// const currentTotalStockNumber = onesies.map((product) =>
+//   product.stock.reduce((total, item) => total + item.quantity, 0)
+// );
+
+// const availableSizes = onesies.map((product) =>
+//   product.stock.filter((item) => item.quantity > 0).map((item) => item.size)
+// );
+
+const onesies = inventory.map((product) => {
+  const total = product.stock.reduce((sum, item) => sum + item.quantity, 0);
+  const sizes = product.stock
+    .filter((item) => item.quantity > 0)
+    .map((item) => item.size);
+
+  return {
+    ...product,
+    currentTotalStockNumber: total,
+    availableSizes: sizes,
+  };
+});
+
+
   return (
     <div className={styles.mainContainer}>
       {onesies.map((card) => (
@@ -35,6 +58,7 @@ export default function Shop() {
             }
             brand={card.brand}
             stock={card.stock}
+            stockNumber={card.currentTotalStockNumber}
             availableSizes={card.availableSizes}
             rating={card.rating}
             numberReviews={card.numberReviews}
