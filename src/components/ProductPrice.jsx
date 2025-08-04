@@ -1,11 +1,11 @@
 import PricingConfig from "../utils/PricingConfig";
 
-export default function ProductPrice({ price, stock, rating, numberReviews }) {
+export default function ProductPrice({ price, stockNumber, rating, numberReviews }) {
   const { finalPrice, discountPercent
     // , reason 
 } = PricingConfig({
     price,
-    stock,
+    stockNumber,
     rating,
     numberReviews,
   });

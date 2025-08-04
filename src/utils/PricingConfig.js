@@ -1,6 +1,6 @@
-export default function PricingConfig({ price, stock, rating, numberReviews }) {
+export default function PricingConfig({ price, stockNumber, rating, numberReviews }) {
   // No discount for out-of-stock
-  if (stock === 0) {
+  if (stockNumber === 0) {
     return {
       discountPercent: 0,
       finalPrice: price,
@@ -14,7 +14,7 @@ export default function PricingConfig({ price, stock, rating, numberReviews }) {
   let discountPercent = 0;
   let reason = "";
 
-  if (stock >= 8) {
+  if (stockNumber >= 8) {
     if (popularityScore < 10) {
       discountPercent = 20;
       reason = "High stock, low popularity";
@@ -25,7 +25,7 @@ export default function PricingConfig({ price, stock, rating, numberReviews }) {
       discountPercent = 5;
       reason = "High stock, but still popular";
     }
-  } else if (stock >= 4) {
+  } else if (stockNumber >= 4) {
     if (popularityScore < 10) {
       discountPercent = 10;
       reason = "Moderate stock, low popularity";

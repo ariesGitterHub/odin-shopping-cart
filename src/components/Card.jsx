@@ -1,6 +1,8 @@
+import { useState } from "react";
 import styles from "../styles/Card.module.css";
 import RatingStars from "../utils/RatingStars";
 import ProductPrice from "./ProductPrice";
+import Modal from "./Modal";
 import Dropdown from "./Dropdown";
 
 export default function Card({
@@ -17,21 +19,30 @@ export default function Card({
   numberReviews,
   price,
 }) {
+  const [isOpen, setIsOpen] = useState(false);
+  const [currentImage, setCurrentImage] = useState(0);
+  const images = [imgFront, imgRear, imgSizing];
+
+  const openModal = (index) => {
+    setCurrentImage(index);
+    setIsOpen(true);
+  };
+
   return (
     <div className={styles.cardContainer}>
       <h1>{name}</h1>
       <p className={styles.brand}>
         {" "}
         by&nbsp;
-        {brand === "Dinojama" ? (
+        {brand === "dinojama" ? (
           <span className={styles.dinojama}>{brand}</span>
-        ) : brand === "Jammy Mart" ? (
+        ) : brand === "jammy mart" ? (
           <span className={styles.jammyMart}>{brand}</span>
-        ) : brand === "Mooshi-doo" ? (
+        ) : brand === "mooshi-doo" ? (
           <span className={styles.mooshiDoo}>{brand}</span>
-        ) : brand === "Plushies" ? (
+        ) : brand === "plushies" ? (
           <span className={styles.plushies}>{brand}</span>
-        ) : brand === "Spanko" ? (
+        ) : brand === "spanko" ? (
           <span className={styles.spanko}>{brand}</span>
         ) : (
           <span>{brand}</span>
@@ -42,18 +53,28 @@ export default function Card({
           src={imgFront}
           alt={`${name} onesie front view`}
           className={styles.imgFront}
+          onClick={() => openModal(0)}
         />
         <div className={styles.smallSideImgContainer}>
           <img
             src={imgRear}
             alt={`${name} onesie rear view`}
             className={styles.smallSideImg}
+            onClick={() => openModal(1)}
           />
           <img
             src={imgSizing}
             alt={`${name} onesie sizing information`}
             className={styles.smallSideImg}
+            onClick={() => openModal(2)}
           />
+          {isOpen && (
+            <Modal
+              images={images}
+              currentIndex={currentImage}
+              onClose={() => setIsOpen(false)}
+            />
+          )}
         </div>
       </div>
       <div className={styles.detailsContainer}>
@@ -103,6 +124,25 @@ export default function Card({
                 console.log("Size selected:", selectedSize)
               }
             />
+          )}
+          {/* TODO - Below this is temporary */}
+          {availableSizes.length > 0 && (
+            <button
+              // onClick={onClick}
+              style={{
+                padding: "0.5rem 1rem",
+                backgroundColor: "var(--frog-dk)",
+                color: "#fff",
+                border: "0.125rem solid var(--frog-black)",
+                borderRadius: "4px",
+                fontFamily: "var(--font-text)",
+                fontSize: "1rem",
+                cursor: "pointer",
+                textTransform: "uppercase",
+              }}
+            >
+              Add to Cart
+            </button>
           )}
         </div>
       </div>

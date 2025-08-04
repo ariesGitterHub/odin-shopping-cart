@@ -1,3 +1,4 @@
+
 import styles from "../styles/Shop.module.css";
 import { inventory } from "../data/inventory";
 import imgSizesDinojama from "../assets/imgSizesDinojama.JPG";
@@ -10,30 +11,18 @@ import imgSizes from "../assets/imgSizesSpanko.JPG";
 import Card from "../components/Card";
 
 export default function Shop() {
+  const onesies = inventory.map((product) => {
+    const total = product.stock.reduce((sum, item) => sum + item.quantity, 0);
+    const sizes = product.stock
+      .filter((item) => item.quantity > 0)
+      .map((item) => item.size);
 
-// const onesies = [...inventory];
-
-// const currentTotalStockNumber = onesies.map((product) =>
-//   product.stock.reduce((total, item) => total + item.quantity, 0)
-// );
-
-// const availableSizes = onesies.map((product) =>
-//   product.stock.filter((item) => item.quantity > 0).map((item) => item.size)
-// );
-
-const onesies = inventory.map((product) => {
-  const total = product.stock.reduce((sum, item) => sum + item.quantity, 0);
-  const sizes = product.stock
-    .filter((item) => item.quantity > 0)
-    .map((item) => item.size);
-
-  return {
-    ...product,
-    currentTotalStockNumber: total,
-    availableSizes: sizes,
-  };
-});
-
+    return {
+      ...product,
+      currentTotalStockNumber: total,
+      availableSizes: sizes,
+    };
+  });
 
   return (
     <div className={styles.mainContainer}>
@@ -44,15 +33,15 @@ const onesies = inventory.map((product) => {
             imgFront={card.imageFront}
             imgRear={card.imageRear}
             imgSizing={
-              card.brand === "Dinojama"
+              card.brand === "dinojama"
                 ? imgSizesDinojama
-                : card.brand === "Jammy Mart"
+                : card.brand === "jammy mart"
                 ? imgSizesJammyMart
-                : card.brand === "Mooshi-doo"
+                : card.brand === "mooshi-doo"
                 ? imgSizesMooshiDoo
-                : card.brand === "Plushies"
+                : card.brand === "plushies"
                 ? imgSizesPlushies
-                : card.brand === "Spanko"
+                : card.brand === "spanko"
                 ? imgSizesSpanko
                 : imgSizes
             }

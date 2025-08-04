@@ -1,9 +1,12 @@
 .navbar {
     height: fit-content;
-    /* width: 100%; */
-    background-color: var(--rose-lt);
-    margin: 0;
+    width: 100vw;
+    position: sticky;
+    top: 0;
+    background-color: var(--rose-dk);
+    margin: 0 auto;
     padding: 0.5rem;
+    z-index: 20;
 }
 
 .navbar ul {
@@ -17,11 +20,11 @@
 }
 
 .navbar a:link {
-    color: var(--rose-dk);
+    color: var(--frog-white);
     text-decoration: none;
 }
 .navbar a:visited {
-    color: var(--frog-black);
+    color: var(--gold);
     text-decoration: none;
 }
 
