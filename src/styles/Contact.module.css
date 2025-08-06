@@ -10,7 +10,7 @@
   border-radius: 1rem;
   box-shadow: 5px 5px 100px 5px var(--frog-dk);
   padding: 1rem;
-  text-align: left;
+  /* text-align: left; */
 }
 
 .titleContainer {
@@ -48,6 +48,7 @@
 
 .textContainer h2 {
 color: var(--frog-black);
+font-family: var(--font-title);
   font-size: 1.125rem;
   text-align: left;
   text-transform: uppercase;
@@ -61,4 +62,8 @@ color: var(--frog-black);
 
 .bold {
     font-weight: 800;
+}
+
+.italic {
+  font-style: italic;
 }

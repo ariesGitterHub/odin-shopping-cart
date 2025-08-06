@@ -14,15 +14,13 @@ export default function Contact() {
       <div className={styles.textContainer}>
         <p>
           Got questions, compliments, or photos of you living your best
-          animal-onesie life? We'd love to hear from you! We're here to help.
+          animal-onesie life? We'd love to hear from you! <span className={styles.italic}>We're here to help, because life's too short for boring pajamas.</span>
         </p>
         <br />
         <h2>Email</h2>
         <p className={styles.bold}>support@funzy-onesies.com</p>
         <p>
-          We typically respond within 24 hours, Monday through Friday. Weekend
-          emails may be answered while wearing a sloth onesie—so please be
-          patient.
+          We typically respond within 24 hours, Monday through Friday. Weekend emails may be answered while wearing a sloth onesie, so please be patient.
         </p>
         <br />
         <h2>Phone</h2>
@@ -34,11 +32,6 @@ export default function Contact() {
         <br />
         <h2>Social Media</h2>
         <p className={styles.bold}>Instagram: @fun_onesies</p>
-        <br />
-        <p>
-          So don't be shy, reach out anytime! Life's too short for boring
-          pajamas.
-        </p>
       </div>
     </div>
   );
