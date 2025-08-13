@@ -6,7 +6,6 @@
   align-items: center;
   justify-content: center;
   background: linear-gradient(0deg, var(--frog-white), var(--frog-lt));
-  /* background-color: transparent; */
   border-radius: 1rem;
   box-shadow: 5px 5px 100px 5px var(--frog-dk);
   padding: 1rem;
@@ -14,7 +13,6 @@
 
 .title {
   color: var(--rose-dk);
-  /* color: var(--frog-black); */
   font-family: var(--font-title);
   text-align: center;
 }

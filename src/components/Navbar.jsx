@@ -22,7 +22,9 @@ export default function Navbar() {
           <Link to="/contact">Contact</Link>
         </li>
         <li>
-          <img src={imgCart} alt="Shopping cart icon." />
+          <Link to="/shopping-cart">
+            <img src={imgCart} alt="Shopping cart icon." />
+          </Link>
         </li>
       </ul>
     </nav>

@@ -1,26 +1,25 @@
 
 :root {
-    /* --frog-dk: #7C8C00;
-    --frog-lt: #C6D57A; */
-    --frog-dk: #313D25;
-    --frog-lt: #BFCB99;
-        --frog-lt-trans: #bfcb99a9;
-    --frog-black: #060700;
-    --frog-white: #DADCD1;
-    --rose-dk: #BE3B65;
-    --rose-lt: #EDA1AE;
-      --gold-lt: #ffe463;
+  /* --frog-dk: #7C8C00;
+  --frog-lt: #C6D57A; */
+  --frog-dk: #313D25;
+  --frog-lt: #BFCB99;
+  --frog-lt-trans: #bfcb99a9;
+  --frog-black: #060700;
+  --frog-white: #DADCD1;
+  --rose-dk: #BE3B65;
+  --rose-lt: #EDA1AE;
+  --gold-lt: #ffe463;
   --gold: #eec144;
   --white: #ffffff;
-  
-    --font-title: "Slackey", sans-serif;
-    --font-text: "Rubik", sans-serif;
-    --font-dinojama: "Barrio", system-ui;;
-    --font-jammy-mart: "Mystery Quest", system-ui;
-    --font-mooshiDoo:  "Hanalei Fill", system-ui;
-    --font-plushies: "Matemasie", sans-serif;
-    --font-spanko: "Bangers", system-ui;
-    --
+
+  --font-title: "Slackey", sans-serif;
+  --font-text: "Rubik", sans-serif;
+  --font-dinojama: "Barrio", system-ui;;
+  --font-jammy-mart: "Mystery Quest", system-ui;
+  --font-mooshiDoo:  "Hanalei Fill", system-ui;
+  --font-plushies: "Matemasie", sans-serif;
+  --font-spanko: "Bangers", system-ui;
 }
 
 *,
@@ -80,15 +79,14 @@ li {
     margin: 1rem;
 }
 
-.font-title {
+/* .font-title {
   font-family: "Slackey", sans-serif;
   font-weight: 400;
   font-style: normal;
 }
 
-
 .font-text {
   font-family: "Dongle", sans-serif;
   font-weight: 400;
   font-style: normal;
-}
+} */

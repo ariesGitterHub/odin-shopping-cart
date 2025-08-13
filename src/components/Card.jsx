@@ -4,6 +4,7 @@ import RatingStars from "../utils/RatingStars";
 import ProductPrice from "./ProductPrice";
 import Modal from "./Modal";
 import Dropdown from "./Dropdown";
+import Button from "./Button";
 
 export default function Card({
   id,
@@ -127,22 +128,22 @@ export default function Card({
           )}
           {/* TODO - Below this is temporary */}
           {availableSizes.length > 0 && (
-            <button
+            <Button variant="cart"
               // onClick={onClick}
-              style={{
-                padding: "0.5rem 1rem",
-                backgroundColor: "var(--frog-dk)",
-                color: "#fff",
-                border: "0.125rem solid var(--frog-black)",
-                borderRadius: "4px",
-                fontFamily: "var(--font-text)",
-                fontSize: "1rem",
-                cursor: "pointer",
-                textTransform: "uppercase",
-              }}
+              // style={{
+              //   padding: "0.5rem 1rem",
+              //   backgroundColor: "var(--frog-dk)",
+              //   color: "#fff",
+              //   border: "0.125rem solid var(--frog-black)",
+              //   borderRadius: "4px",
+              //   fontFamily: "var(--font-text)",
+              //   fontSize: "1rem",
+              //   cursor: "pointer",
+              //   textTransform: "uppercase",
+              // }}
             >
               Add to Cart
-            </button>
+            </Button>
           )}
         </div>
       </div>

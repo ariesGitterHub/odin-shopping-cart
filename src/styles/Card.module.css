@@ -1,5 +1,5 @@
 .cardContainer {
-  /* height: fit-content; */
+  /* TODO - Modulate height later with media queries */
   height: 33rem;
   width: fit-content;
   display: flex;
@@ -10,7 +10,6 @@
   background-color: white;
   border-radius: 1rem;
   box-shadow: 5px 5px 100px 5px var(--frog-dk);
-  /* margin-bottom: 1rem; */
   padding: 1rem;
 }
 
@@ -26,7 +25,6 @@
   font-family: var(--font-text);
   font-size: 1rem;
   margin-bottom: 0.5rem;
-  /* text-transform: capitalize; */
 }
 
 .dinojama,
@@ -71,7 +69,6 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  /* background-color: var(--frog-white); */
   padding: 0.5rem;
 }
 
@@ -79,12 +76,13 @@
   height: 5rem;
   width: 5rem;
   background-color: white;
-    cursor: pointer;
+  cursor: pointer;
   object-fit: contain;
 }
 
 .detailsContainer,
-.priceContainer, .buttonContainer {
+.priceContainer,
+.buttonContainer {
   width: 18rem;
   display: flex;
   flex-direction: row;
@@ -94,27 +92,22 @@
   gap: 0.5rem;
   background-color: white;
   font-family: var(--font-text);
- 
-  /* margin: 1rem; */
   padding: 0.5rem;
 }
 
 .detailsContainer {
-
- font-size: 1rem;
+  font-size: 1rem;
 }
 
 .priceContainer {
-    color: var(--frog-black);
-     font-size: 1.25rem;
+  color: var(--frog-black);
+  font-size: 1.25rem;
 }
-
 
 .stockNumber,
 .outOfStock,
 .sizes,
 .rating {
-  /* margin-top: 10px; */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -122,8 +115,6 @@
   flex-wrap: wrap;
   background-color: var(--rose-lt);
   border-radius: 1rem;
-  /* font-family: var(--font-text);
-  font-size: 1rem; */
   padding: 0.5rem;
   text-transform: capitalize;
 }
@@ -132,6 +123,7 @@
   font-style: italic;
 }
 
+/* Below, what was this??? */
 .sizeList {
   /* display: flex;
   gap: 0.125rem;
@@ -145,12 +137,9 @@
   align-items: center;
   justify-content: center;
   background-color: white;
-   border-radius: 50%;
+  border-radius: 50%;
   font-size: 0.8rem;
   font-weight: bold;
-   padding: 0.125rem 0.25rem;
-   /* text-align: center; */
+  padding: 0.125rem 0.25rem;
   text-transform: uppercase;
-  /* cursor: pointer; */
-  /* transition: background-color 0.3s ease; */
 }
