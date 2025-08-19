@@ -13,7 +13,7 @@ export default function Card({
   imgRear,
   imgSizing,
   brand,
-  stock,
+  stock, // TODO - handle this if not used...
   stockNumber,
   availableSizes,
   rating,
@@ -33,8 +33,7 @@ export default function Card({
     <div className={styles.cardContainer}>
       <h1>{name}</h1>
       <p className={styles.brand}>
-        {" "}
-        by&nbsp;
+          by&nbsp;
         {brand === "dinojama" ? (
           <span className={styles.dinojama}>{brand}</span>
         ) : brand === "jammy mart" ? (
