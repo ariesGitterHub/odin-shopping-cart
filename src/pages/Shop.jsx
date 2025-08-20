@@ -14,8 +14,11 @@ import Card from "../components/Card";
 
 export default function Shop() {
 
-  const { onesies } = useOutletContext();
-  
+  const {
+    filteredProducts, 
+    //onesies
+   } = useOutletContext();
+
   // const onesies = inventory.map((product) => {
   //   const total = product.stock.reduce((sum, item) => sum + item.quantity, 0);
   //   const sizes = product.stock
@@ -31,35 +34,40 @@ export default function Shop() {
 
   return (
     <div className={styles.mainContainer}>
-      {onesies.map((card) => (
-        <div key={card.id}>
-          <Card
-            name={card.animalType}
-            imgFront={card.imageFront}
-            imgRear={card.imageRear}
-            imgSizing={
-              card.brand === "dinojama"
-                ? imgSizesDinojama
-                : card.brand === "jammy mart"
-                ? imgSizesJammyMart
-                : card.brand === "mooshi-doo"
-                ? imgSizesMooshiDoo
-                : card.brand === "plushies"
-                ? imgSizesPlushies
-                : card.brand === "spanko"
-                ? imgSizesSpanko
-                : imgSizes
-            }
-            brand={card.brand}
-            stock={card.stock}
-            stockNumber={card.currentTotalStockNumber}
-            availableSizes={card.availableSizes}
-            rating={card.rating}
-            numberReviews={card.numberReviews}
-            price={card.price}
-          />
-        </div>
-      ))}
+      {/* {onesies.map((card) => ( */}
+      {filteredProducts.length > 0 ? (
+        filteredProducts.map((card) => (
+          <div key={card.id}>
+            <Card
+              name={card.animalType}
+              imgFront={card.imageFront}
+              imgRear={card.imageRear}
+              imgSizing={
+                card.brand === "dinojama"
+                  ? imgSizesDinojama
+                  : card.brand === "jammy mart"
+                  ? imgSizesJammyMart
+                  : card.brand === "mooshi-doo"
+                  ? imgSizesMooshiDoo
+                  : card.brand === "plushies"
+                  ? imgSizesPlushies
+                  : card.brand === "spanko"
+                  ? imgSizesSpanko
+                  : imgSizes
+              }
+              brand={card.brand}
+              stock={card.stock}
+              stockNumber={card.currentTotalStockNumber}
+              availableSizes={card.availableSizes}
+              rating={card.rating}
+              numberReviews={card.numberReviews}
+              price={card.price}
+            />
+          </div>
+        ))
+      ) : (
+        <p className={styles.noProductsFound}>no products found...</p> // Fallback when no products match the search
+      )}
     </div>
   );
 }

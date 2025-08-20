@@ -124,7 +124,7 @@ export const inventory = [
     id: nanoid(),
     animalType: "alpaca",
     baseSKU: "ALPAC001JAM",
-    tags: ["mammals"],
+    tags: ["mammals, camelids"],
     brand: "jammy mart",
     price: 32.99,
     stock: [
@@ -142,7 +142,7 @@ export const inventory = [
     id: nanoid(),
     animalType: "axolotl",
     baseSKU: "AXOLO001JAM",
-    tags: ["amphibians"],
+    tags: ["amphibians, salamanders"],
     brand: "jammy mart",
     price: 34.99,
     stock: [
@@ -160,7 +160,7 @@ export const inventory = [
     id: nanoid(),
     animalType: "bear",
     baseSKU: "BEARX001JAM",
-    tags: ["mammals", "ursine"],
+    tags: ["mammals", "ursines"],
     brand: "jammy mart",
     price: 34.99,
     stock: [
@@ -178,7 +178,7 @@ export const inventory = [
     id: nanoid(),
     animalType: "bee",
     baseSKU: "BEEXX001SPA",
-    tags: ["bugs"],
+    tags: ["bugs", "insects"],
     brand: "spanko",
     price: 32.99,
     stock: [
@@ -196,7 +196,7 @@ export const inventory = [
     id: nanoid(),
     animalType: "black bear",
     baseSKU: "BLABE001JAM",
-    tags: ["mammals", "ursine"],
+    tags: ["mammals", "ursines"],
     brand: "jammy mart",
     price: 34.99,
     stock: [
@@ -214,7 +214,7 @@ export const inventory = [
     id: nanoid(),
     animalType: "black dragon",
     baseSKU: "BLADR001DIN",
-    tags: ["reptiles", "mythical"],
+    tags: ["reptiles", "mythical", "lizards"],
     brand: "dinojama",
     price: 36.99,
     stock: [
@@ -232,7 +232,7 @@ export const inventory = [
     id: nanoid(),
     animalType: "blue dragon",
     baseSKU: "BLUDR001DIN",
-    tags: ["reptiles", "mythical"],
+    tags: ["reptiles", "mythical", "lizards"],
     brand: "dinojama",
     price: 36.99,
     stock: [
@@ -268,7 +268,7 @@ export const inventory = [
     id: nanoid(),
     animalType: "butterfly",
     baseSKU: "BUTFL001MOO",
-    tags: ["bugs"],
+    tags: ["bugs", "insects"],
     brand: "mooshi-doo",
     price: 38.99,
     stock: [
@@ -286,7 +286,7 @@ export const inventory = [
     id: nanoid(),
     animalType: "caracal",
     baseSKU: "CARAC001JAM",
-    tags: ["mammals", "felines"],
+    tags: ["mammals", "felines", "cats"],
     brand: "jammy mart",
     price: 34.99,
     stock: [
@@ -322,7 +322,7 @@ export const inventory = [
     id: nanoid(),
     animalType: "chameleon",
     baseSKU: "CHAME001PLU",
-    tags: ["reptiles"],
+    tags: ["reptiles", "lizards"],
     brand: "plushies",
     price: 42.99,
     stock: [
@@ -358,7 +358,7 @@ export const inventory = [
     id: nanoid(),
     animalType: "dalmatian",
     baseSKU: "DALMA001SPA",
-    tags: ["mammals", "canines"],
+    tags: ["mammals", "canines", "doggos"],
     brand: "spanko",
     price: 32.99,
     stock: [
@@ -394,7 +394,7 @@ export const inventory = [
     id: nanoid(),
     animalType: "dinosaur",
     baseSKU: "DINOS001DIN",
-    tags: ["reptiles", "dinosaurs"],
+    tags: ["reptiles", "dinosaurs", "lizards"],
     brand: "dinojama",
     price: 36.99,
     stock: [
@@ -412,7 +412,7 @@ export const inventory = [
     id: nanoid(),
     animalType: "donkey",
     baseSKU: "DONKE001JAM",
-    tags: ["mammals"],
+    tags: ["mammals", "horseys"],
     brand: "jammy mart",
     price: 34.99,
     stock: [
@@ -484,7 +484,7 @@ export const inventory = [
     id: nanoid(),
     animalType: "fox",
     baseSKU: "FOXXX001JAM",
-    tags: ["mammals", "canines"],
+    tags: ["mammals", "canines", "doggos"],
     brand: "jammy mart",
     price: 34.99,
     stock: [
@@ -538,7 +538,7 @@ export const inventory = [
     id: nanoid(),
     animalType: "housefly",
     baseSKU: "HOUFL001SPA",
-    tags: ["bugs"],
+    tags: ["bugs", "insects"],
     brand: "spanko",
     price: 32.99,
     stock: [
@@ -592,7 +592,7 @@ export const inventory = [
     id: nanoid(),
     animalType: "leopard",
     baseSKU: "LEOPA001SPA",
-    tags: ["mammals", "felines"],
+    tags: ["mammals", "felines", "cats"],
     brand: "spanko",
     price: 32.99,
     stock: [
@@ -610,7 +610,7 @@ export const inventory = [
     id: nanoid(),
     animalType: "lion",
     baseSKU: "LIONX001JAM",
-    tags: ["mammals", "felines"],
+    tags: ["mammals", "felines", "cats"],
     brand: "jammy mart",
     price: 34.99,
     stock: [
@@ -700,7 +700,7 @@ export const inventory = [
     id: nanoid(),
     animalType: "moth",
     baseSKU: "MOTHX001MOO",
-    tags: ["bugs"],
+    tags: ["bugs", "insects"],
     brand: "mooshi-doo",
     price: 38.99,
     stock: [
@@ -736,7 +736,7 @@ export const inventory = [
     id: nanoid(),
     animalType: "panda",
     baseSKU: "PANDA001JAM",
-    tags: ["mammals", "ursine"],
+    tags: ["mammals", "ursines"],
     brand: "jammy mart",
     price: 34.99,
     stock: [
@@ -916,7 +916,7 @@ export const inventory = [
     id: nanoid(),
     animalType: "sand cat",
     baseSKU: "SANCA001JAM",
-    tags: ["mammals", "felines"],
+    tags: ["mammals", "felines", "cats"],
     brand: "jammy mart",
     price: 34.99,
     stock: [
@@ -988,7 +988,7 @@ export const inventory = [
     id: nanoid(),
     animalType: "spider",
     baseSKU: "SPIDE001JAM",
-    tags: ["bugs"],
+    tags: ["bugs", "arachnids"],
     brand: "jammy mart",
     price: 34.99,
     stock: [
@@ -1024,7 +1024,7 @@ export const inventory = [
     id: nanoid(),
     animalType: "stegosaurus",
     baseSKU: "STEGO001DIN",
-    tags: ["reptiles", "dinosaurs"],
+    tags: ["reptiles", "dinosaurs", "lizards"],
     brand: "dinojama",
     price: 42.99,
     stock: [
@@ -1042,7 +1042,7 @@ export const inventory = [
     id: nanoid(),
     animalType: "tiger",
     baseSKU: "TIGER001SPA",
-    tags: ["mammals", "felines"],
+    tags: ["mammals", "felines", "cats"],
     brand: "spanko",
     price: 32.99,
     stock: [
@@ -1060,7 +1060,7 @@ export const inventory = [
     id: nanoid(),
     animalType: "triceratops",
     baseSKU: "TRICE001DIN",
-    tags: ["reptiles", "dinosaurs"],
+    tags: ["reptiles", "dinosaurs", "lizards"],
     brand: "dinojama",
     price: 42.99,
     stock: [
@@ -1096,7 +1096,7 @@ export const inventory = [
     id: nanoid(),
     animalType: "T-Rex",
     baseSKU: "TREXX001DIN",
-    tags: ["reptiles", "dinosaurs"],
+    tags: ["reptiles", "dinosaurs", "lizards"],
     brand: "dinojama",
     price: 39.99,
     stock: [
@@ -1114,7 +1114,7 @@ export const inventory = [
     id: nanoid(),
     animalType: "unicorn",
     baseSKU: "UNICO001JAM",
-    tags: ["mammals", "mythical"],
+    tags: ["mammals", "horseys", "mythical"],
     brand: "jammy mart",
     price: 34.99,
     stock: [
@@ -1150,7 +1150,7 @@ export const inventory = [
     id: nanoid(),
     animalType: "wolf",
     baseSKU: "WOLFX001JAM",
-    tags: ["mammals", "canines"],
+    tags: ["mammals", "canines", "doggos"],
     brand: "jammy mart",
     price: 34.99,
     stock: [
@@ -1168,7 +1168,7 @@ export const inventory = [
     id: nanoid(),
     animalType: "zebra",
     baseSKU: "ZEBRA001SPA",
-    tags: ["mammals"],
+    tags: ["mammals", "horseys"],
     brand: "spanko",
     price: 32.99,
     stock: [

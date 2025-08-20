@@ -121,7 +121,8 @@ export default function Card({
               label="Size"
               options={availableSizes}
               onSelect={(selectedSize) =>
-                console.log("Size selected:", selectedSize)
+                console.log("Size selected:", selectedSize) 
+                // TODO - delete above
               }
             />
           )}

@@ -1,12 +1,12 @@
 import { Link, useLocation } from "react-router-dom";
 import favIcon from "../assets/favIcon.svg";
 import imgCart from "../assets/imgCart.svg";
-import SearchBar from "./SearchBar";
+import Searchbar from "./Searchbar";
 import styles from "../styles/Navbar.module.css";
 
-export default function Navbar() {
-       const location = useLocation();
-       const onShopPage = location.pathname; 
+export default function Navbar({ onSearch }) {
+  const location = useLocation();
+  const onShopPage = location.pathname;
   return (
     <>
       <nav className={styles.navbar}>
@@ -31,9 +31,7 @@ export default function Navbar() {
             </Link>
           </li>
         </ul>
-        {onShopPage === "/shop" && 
-        <SearchBar />
-}
+        {onShopPage === "/shop" && <Searchbar onSearch={onSearch} />}
       </nav>
     </>
   );
