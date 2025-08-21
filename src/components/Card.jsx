@@ -1,7 +1,9 @@
 import { useState } from "react";
+import { useCart } from "../context/CartContext";
 import styles from "../styles/Card.module.css";
 import RatingStars from "../utils/RatingStars";
 import ProductPrice from "./ProductPrice";
+import PriceConfig from "../utils/PricingConfig"
 import Modal from "./Modal";
 import Dropdown from "./Dropdown";
 import Button from "./Button";
@@ -22,7 +24,19 @@ export default function Card({
 }) {
   const [isOpen, setIsOpen] = useState(false);
   const [currentImage, setCurrentImage] = useState(0);
+  const [selectedSize, setSelectedSize] = useState(null);
   const images = [imgFront, imgRear, imgSizing];
+
+  // Below: I need this in Card.jsx to grab computed prices for add to cart button
+const { handleAddToCart } = useCart();
+
+const { finalPrice, discountPercent } = PriceConfig({
+  price,
+  stockNumber,
+  rating,
+  numberReviews,
+});
+
 
   const openModal = (index) => {
     setCurrentImage(index);
@@ -33,7 +47,7 @@ export default function Card({
     <div className={styles.cardContainer}>
       <h1>{name}</h1>
       <p className={styles.brand}>
-          by&nbsp;
+        by&nbsp;
         {brand === "dinojama" ? (
           <span className={styles.dinojama}>{brand}</span>
         ) : brand === "jammy mart" ? (
@@ -112,6 +126,7 @@ export default function Card({
               stockNumber={stockNumber}
               rating={rating}
               numberReviews={numberReviews}
+              finalPrice={finalPrice} // NEW...pass explicitly if needed
             />
           </div>
         </div>
@@ -120,27 +135,36 @@ export default function Card({
             <Dropdown
               label="Size"
               options={availableSizes}
-              onSelect={(selectedSize) =>
-                console.log("Size selected:", selectedSize) 
-                // TODO - delete above
-              }
+              onSelect={(size) => setSelectedSize(size)}
+              // onSelect={
+              //   (selectedSize) => console.log("Size selected:", selectedSize)
+              //   // TODO - delete above
+              //}
             />
           )}
           {/* TODO - Below this is temporary */}
           {availableSizes.length > 0 && (
-            <Button variant="cart"
-              // onClick={onClick}
-              // style={{
-              //   padding: "0.5rem 1rem",
-              //   backgroundColor: "var(--frog-dk)",
-              //   color: "#fff",
-              //   border: "0.125rem solid var(--frog-black)",
-              //   borderRadius: "4px",
-              //   fontFamily: "var(--font-text)",
-              //   fontSize: "1rem",
-              //   cursor: "pointer",
-              //   textTransform: "uppercase",
-              // }}
+            <Button
+              variant="cart"
+              onClick={() => {
+                if (!selectedSize) {
+                  alert("Please select a size");
+                  return;
+                }
+
+    const itemToAdd = {
+      id,
+      name,
+      size: selectedSize,
+      finalPrice,
+      image: imgFront,
+      brand,
+    };
+
+    console.log("[Card] Adding to cart:", itemToAdd); // ✅ LOG HERE
+
+    handleAddToCart(itemToAdd);
+              }}
             >
               Add to Cart
             </Button>

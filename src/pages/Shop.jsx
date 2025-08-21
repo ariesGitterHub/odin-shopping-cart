@@ -34,6 +34,7 @@ export default function Shop() {
 
   return (
     <div className={styles.mainContainer}>
+      {/* BELOW - filteredProducts replaces onesies */}
       {/* {onesies.map((card) => ( */}
       {filteredProducts.length > 0 ? (
         filteredProducts.map((card) => (
