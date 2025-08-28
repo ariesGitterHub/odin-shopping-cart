@@ -5,7 +5,7 @@ const CartContext = createContext();
 export function CartProvider({ children }) {
   const [cartItems, setCartItems] = useState([]);
 
-  function handleAddToCart({ id, name, size, finalPrice, image, brand }) {
+  function handleAddToCart({ id, baseSKU, name, size, finalPrice, image, brand }) {
     setCartItems((prev) => {
       const existingIndex = prev.findIndex(
         (item) => item.id === id && item.size === size
@@ -20,7 +20,8 @@ export function CartProvider({ children }) {
       return [
         ...prev,
         {
-          id,
+          // id,
+          baseSKU,
           name,
           size,
           quantity: 1,

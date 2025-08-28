@@ -70,3 +70,29 @@
   font-family: var(--font-text);
   /* margin-left: 0.5rem; */
 }
+
+.cartItemsContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* margin-left: 2.25rem; */
+}
+
+.cartItemsNum {
+  height: fit-content;
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--gold);
+  border-radius: 50%;
+  color: var(--frog-black);
+  font-family: var(--font-text);
+  font-size: 1rem;
+  font-weight: 600;
+  /* margin-left: -2.25rem;
+  /* margin-top: -1.5rem; */
+  opacity: 0.8;
+  padding: 0.25rem 0.65rem;
+  /* z-index: 1000; */
+}

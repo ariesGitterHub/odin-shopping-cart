@@ -2,11 +2,16 @@ import { Link, useLocation } from "react-router-dom";
 import favIcon from "../assets/favIcon.svg";
 import imgCart from "../assets/imgCart.svg";
 import Searchbar from "./Searchbar";
+import { useCart } from '../context/CartContext';  // Import the useCart hook
+
 import styles from "../styles/Navbar.module.css";
 
 export default function Navbar({ onSearch }) {
   const location = useLocation();
   const onShopPage = location.pathname;
+  const { cartItems } = useCart(); // Destructure cartItems from context
+    const totalItems = cartItems.reduce((acc, item) => acc + item.quantity, 0);
+
   return (
     <>
       <nav className={styles.navbar}>
@@ -27,7 +32,12 @@ export default function Navbar({ onSearch }) {
           </li>
           <li>
             <Link to="/shopping-cart">
-              <img src={imgCart} alt="Shopping cart icon." />
+              <div className={styles.cartItemsContainer}>
+                <img src={imgCart} alt="Shopping cart icon." />
+                {totalItems > 0 && (
+                  <span className={styles.cartItemsNum}>{totalItems}</span>
+                )}
+              </div>
             </Link>
           </li>
         </ul>

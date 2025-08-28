@@ -10,6 +10,7 @@ import Button from "./Button";
 
 export default function Card({
   id,
+  baseSKU,
   name,
   imgFront,
   imgRear,
@@ -46,6 +47,7 @@ const { finalPrice, discountPercent } = PriceConfig({
   return (
     <div className={styles.cardContainer}>
       <h1>{name}</h1>
+      {/* <p>{baseSKU}</p> */}
       <p className={styles.brand}>
         by&nbsp;
         {brand === "dinojama" ? (
@@ -153,7 +155,8 @@ const { finalPrice, discountPercent } = PriceConfig({
                 }
 
     const itemToAdd = {
-      id,
+      // id,
+      baseSKU,
       name,
       size: selectedSize,
       finalPrice,

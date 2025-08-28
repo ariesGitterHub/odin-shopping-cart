@@ -81,19 +81,20 @@ export default function App() {
 
   return (
     <div>
-      <Navbar onSearch={setSearchQuery} searchQuery={searchQuery} />
-      <main>
-          <CartProvider>
-                <Outlet
-          context={{
-            filteredProducts,
-            //onesies
-          }}
-        />    
-          </CartProvider>
-
-      </main>
-      <Footer />
+      <CartProvider>
+        <Navbar onSearch={setSearchQuery} searchQuery={searchQuery} />
+        <main>
+          {/* <CartProvider> */}
+          <Outlet
+            context={{
+              filteredProducts,
+              //onesies
+            }}
+          />
+          {/* </CartProvider> */}
+        </main>
+        <Footer />
+      </CartProvider>
     </div>
   );
 }
