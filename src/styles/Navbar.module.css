@@ -72,13 +72,15 @@
 }
 
 .cartItemsContainer {
+    position: relative;  /* Ensure the badge is positioned relative to this container */
+
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: end;
   /* margin-left: 2.25rem; */
 }
 
-.cartItemsNum {
+/* .cartItemsNum {
   height: fit-content;
   width: fit-content;
   display: flex;
@@ -90,9 +92,21 @@
   font-family: var(--font-text);
   font-size: 1rem;
   font-weight: 600;
-  /* margin-left: -2.25rem;
-  /* margin-top: -1.5rem; */
   opacity: 0.8;
-  padding: 0.25rem 0.65rem;
-  /* z-index: 1000; */
+  padding: 0.25rem 0.75rem;
+} */
+
+.cartItemsNum {
+  position: absolute; /* Position it on top of the cart icon */
+  top: -5px; /* Adjust based on the icon size */
+  right: -5px; /* Adjust based on the icon size */
+  background-color: var(--gold);
+  border-radius: 50%;
+  color: var(--frog-black);
+  font-family: var(--font-text);
+  font-size: 1rem;
+  font-weight: 600;
+  opacity: 0.95;
+  padding: 0.25rem 0.65rem; /* Adjust padding for better fit */
+  z-index: 10; /* Make sure the number stays on top */
 }

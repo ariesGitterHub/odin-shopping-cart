@@ -29,15 +29,15 @@ export default function Card({
   const images = [imgFront, imgRear, imgSizing];
 
   // Below: I need this in Card.jsx to grab computed prices for add to cart button
-const { handleAddToCart } = useCart();
+  // const { handleAddToCart, cartItems } = useCart();
+    const { handleAddToCart } = useCart();
 
-const { finalPrice, discountPercent } = PriceConfig({
-  price,
-  stockNumber,
-  rating,
-  numberReviews,
-});
-
+  const { finalPrice, discountPercent } = PriceConfig({
+    price,
+    stockNumber,
+    rating,
+    numberReviews,
+  });
 
   const openModal = (index) => {
     setCurrentImage(index);
@@ -47,6 +47,7 @@ const { finalPrice, discountPercent } = PriceConfig({
   return (
     <div className={styles.cardContainer}>
       <h1>{name}</h1>
+      {/* <p>{id}</p> */}
       {/* <p>{baseSKU}</p> */}
       <p className={styles.brand}>
         by&nbsp;
@@ -137,11 +138,11 @@ const { finalPrice, discountPercent } = PriceConfig({
             <Dropdown
               label="Size"
               options={availableSizes}
-              onSelect={(size) => setSelectedSize(size)}
-              // onSelect={
-              //   (selectedSize) => console.log("Size selected:", selectedSize)
-              //   // TODO - delete above
-              //}
+              // onSelect={(size) => setSelectedSize(size)}
+              onSelect={(size) => {
+                console.log("[Card] Size selected:", size); // TODO - Delete later...
+                setSelectedSize(size);
+              }}
             />
           )}
           {/* TODO - Below this is temporary */}
@@ -154,19 +155,29 @@ const { finalPrice, discountPercent } = PriceConfig({
                   return;
                 }
 
-    const itemToAdd = {
-      // id,
-      baseSKU,
-      name,
-      size: selectedSize,
-      finalPrice,
-      image: imgFront,
-      brand,
-    };
+                console.log("selectedSize is:", selectedSize);
 
-    console.log("[Card] Adding to cart:", itemToAdd); // ✅ LOG HERE
+                const itemToAdd = {
+                  id,
+                  baseSKU,
+                  name,
+                  // size: selectedSize,
+                  selectedSize,
+                  finalPrice,
+                  image: imgFront,
+                  brand,
+                };
 
-    handleAddToCart(itemToAdd);
+                console.log("[Card] selectedSize before add:", selectedSize);
+                console.log("[Card] Adding to cart:", itemToAdd);
+
+                // handleAddToCart(itemToAdd);
+                handleAddToCart(itemToAdd);
+
+                // TEMP:
+                setTimeout(() => {
+                  // console.log("[Card] Cart after add:", cartItems);
+                }, 200);
               }}
             >
               Add to Cart

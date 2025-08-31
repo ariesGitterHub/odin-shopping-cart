@@ -5,10 +5,15 @@ const CartContext = createContext();
 export function CartProvider({ children }) {
   const [cartItems, setCartItems] = useState([]);
 
-  function handleAddToCart({ id, baseSKU, name, size, finalPrice, image, brand }) {
+  function handleAddToCart({ id, baseSKU, name,
+    //  size,
+    selectedSize,
+    // size: selectedSize,
+      finalPrice, image, brand }) {
     setCartItems((prev) => {
       const existingIndex = prev.findIndex(
-        (item) => item.id === id && item.size === size
+        // (item) => item.id === id && item.size === size
+        (item) => item.id === id
       );
 
       if (existingIndex !== -1) {
@@ -20,10 +25,11 @@ export function CartProvider({ children }) {
       return [
         ...prev,
         {
-          // id,
+          id,
           baseSKU,
           name,
-          size,
+          // size,
+          size: selectedSize,
           quantity: 1,
           price: finalPrice,
           image,
@@ -36,6 +42,10 @@ export function CartProvider({ children }) {
   useEffect(() => {
     console.log("[CartContext] Current cartItems:", cartItems);
   }, [cartItems]);
+
+    useEffect(() => {
+      console.log("[CartContext] Current cartItems:", cartItems.length);
+    }, [cartItems]);
 
   return (
     <CartContext.Provider value={{ cartItems, setCartItems, handleAddToCart }}>

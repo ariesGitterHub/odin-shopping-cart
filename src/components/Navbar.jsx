@@ -35,7 +35,7 @@ export default function Navbar({ onSearch }) {
               <div className={styles.cartItemsContainer}>
                 <img src={imgCart} alt="Shopping cart icon." />
                 {totalItems > 0 && (
-                  <span className={styles.cartItemsNum}>{totalItems}</span>
+                  <div className={styles.cartItemsNum}>{totalItems}</div>
                 )}
               </div>
             </Link>

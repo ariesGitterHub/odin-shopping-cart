@@ -24,7 +24,10 @@
 .brand {
   font-family: var(--font-text);
   font-size: 1rem;
+  font-style: italic;
   margin-bottom: 0.5rem;
+  /* text-decoration: underline; */
+  text-transform: lowercase;
 }
 
 .dinojama,
@@ -33,6 +36,7 @@
 .plushies,
 .spanko {
   font-size: 1.125rem;
+  font-style: normal;
   text-transform: capitalize;
 }
 

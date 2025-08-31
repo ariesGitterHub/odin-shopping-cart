@@ -40,6 +40,7 @@ export default function Shop() {
         filteredProducts.map((card) => (
           <div key={card.id}>
             <Card
+            id={card.id}
               baseSKU={card.baseSKU}
               name={card.animalType}
               imgFront={card.imageFront}
