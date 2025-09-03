@@ -6,14 +6,16 @@ export function CartProvider({ children }) {
   const [cartItems, setCartItems] = useState([]);
 
   function handleAddToCart({ id, baseSKU, name,
-    //  size,
+     size,
     selectedSize,
     // size: selectedSize,
+    selectedSizeQuantity,
+    selectedSizeSKU,
       finalPrice, image, brand }) {
     setCartItems((prev) => {
       const existingIndex = prev.findIndex(
         // (item) => item.id === id && item.size === size
-        (item) => item.id === id
+        (item) => item.id === id && item.size === size
       );
 
       if (existingIndex !== -1) {
@@ -30,7 +32,9 @@ export function CartProvider({ children }) {
           name,
           // size,
           size: selectedSize,
+          sku: selectedSizeSKU,
           quantity: 1,
+          availableQuantityInSize: selectedSizeQuantity,
           price: finalPrice,
           image,
           brand,

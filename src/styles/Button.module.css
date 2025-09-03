@@ -28,9 +28,29 @@
   background-color: var(--gold);
   border: 0.125rem solid var(--frog-black);
   color: var(--frog-black);
-  transform: scale(1.1);
 }
 
-.cart:active {
-  transform: scale(0.9);
+.paypalButton {
+    /* PayPal Yellow? */
+  background-color: #ffc439;
+}
+
+.cardButton {
+    /* Credit Card Blue? */
+  background-color: #0070f3;
+  color: white;
+}
+
+.appleButton {
+    /* Steve Jobs Black? */
+  background-color: #000;
+  color: white;
+}
+
+.cart:hover, .paypalButton:hover, .cardButton:hover, .appleButton:hover {
+  transform: scale(1.05);
+}
+
+.cart:active, .paypalButton:active, .cardButton:active, .appleButton:active {
+  transform: scale(0.95);
 }

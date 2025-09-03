@@ -40,7 +40,7 @@ export default function Shop() {
         filteredProducts.map((card) => (
           <div key={card.id}>
             <Card
-            id={card.id}
+              id={card.id}
               baseSKU={card.baseSKU}
               name={card.animalType}
               imgFront={card.imageFront}
@@ -62,6 +62,10 @@ export default function Shop() {
               stock={card.stock}
               stockNumber={card.currentTotalStockNumber}
               availableSizes={card.availableSizes}
+              // START CHANGES
+              availableQuantities={card.availableQuantities}
+              availableSKUs={card.availableSKUs}
+              // END CHANGES
               rating={card.rating}
               numberReviews={card.numberReviews}
               price={card.price}

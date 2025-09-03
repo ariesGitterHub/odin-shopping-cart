@@ -1,9 +1,109 @@
-h1 {
-    font-family: var(--font-title);
+.mainContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-text);
 }
 
-.changeLater {
+h1 {
+    color: var(--rose-dk);
+    font-family: var(--font-title);
+    text-align: center;
+    text-transform: capitalize;
+}
+
+.emptyCartMsg {
+    text-transform: uppercase;
+}
+
+.cartItemContainer {
+      height: fit-content;
+  width: fit-content;
     display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
     font-family: var(--font-text);
     font-size: 1rem;
+    margin: 1rem;
+    text-transform: capitalize;
+}
+
+.itemEntry {
+    font-size: 1rem;
+    text-transform: uppercase;
+}
+
+.itemTotal {
+    height: fit-content;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    background-color: var(--white);
+    /* border-radius: 1rem; */
+    margin: 1rem;
+    padding: 1rem;
+
+}
+
+.summaryContainer {
+    width: 280px;
+  background: var(--white);
+  color: var(--frog-black);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  max-width: 400px;
+  /* margin: 2rem auto; */
+  margin: 1rem;
+}
+
+.summaryLine,
+.summaryLineTotal {
+  display: flex;
+  justify-content: space-between;
+  margin: 0.5rem 0;
+}
+
+.summaryLineTotal {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.divider {
+  margin: 1rem 0;
+}
+
+.paymentButtons button {
+  display: block;
+  width: 100%;
+  padding: 0.75rem;
+  margin: 0.5rem 0;
+  font-size: 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* TODO - delete/move to Button.module.jsx */
+.paypalButton {
+    /* PayPal Yellow? */
+  background-color: #ffc439;
+}
+
+.cardButton {
+    /* Credit Card Blue? */
+  background-color: #0070f3;
+  color: white;
+}
+
+.appleButton {
+    /* Steve Jobs Black? */
+  background-color: #000;
+  color: white;
 }

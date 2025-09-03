@@ -19,6 +19,10 @@ export default function Card({
   stock, // TODO - handle this if not used...
   stockNumber,
   availableSizes,
+  // START CHANGES
+  availableQuantities,
+  availableSKUs,
+  // END CHANGES
   rating,
   numberReviews,
   price,
@@ -26,11 +30,15 @@ export default function Card({
   const [isOpen, setIsOpen] = useState(false);
   const [currentImage, setCurrentImage] = useState(0);
   const [selectedSize, setSelectedSize] = useState(null);
+  // START CHANGES
+  const [selectedSizeQuantity, setSelectedSizeQuantity] = useState(null);
+  const [selectedSizeSKU, setSelectedSizeSKU] = useState(null);
+  // END CHANGES
   const images = [imgFront, imgRear, imgSizing];
 
   // Below: I need this in Card.jsx to grab computed prices for add to cart button
   // const { handleAddToCart, cartItems } = useCart();
-    const { handleAddToCart } = useCart();
+  const { handleAddToCart } = useCart();
 
   const { finalPrice, discountPercent } = PriceConfig({
     price,
@@ -43,6 +51,17 @@ export default function Card({
     setCurrentImage(index);
     setIsOpen(true);
   };
+
+    const handleSizeSelect = (size) => {
+      setSelectedSize(size);
+
+      // Find the index of the selected size
+      const sizeIndex = availableSizes.indexOf(size);
+
+      // Set the corresponding quantity and SKU based on the size selected
+      setSelectedSizeQuantity(availableQuantities[sizeIndex]);
+      setSelectedSizeSKU(availableSKUs[sizeIndex]);
+    };
 
   return (
     <div className={styles.cardContainer}>
@@ -141,7 +160,8 @@ export default function Card({
               // onSelect={(size) => setSelectedSize(size)}
               onSelect={(size) => {
                 console.log("[Card] Size selected:", size); // TODO - Delete later...
-                setSelectedSize(size);
+                // setSelectedSize(size);
+                handleSizeSelect(size);
               }}
             />
           )}
@@ -151,11 +171,19 @@ export default function Card({
               variant="cart"
               onClick={() => {
                 if (!selectedSize) {
-                  alert("Please select a size");
+                  alert("Please select a size.");
                   return;
                 }
 
                 console.log("selectedSize is:", selectedSize);
+                console.log(
+                  "selectedQuantity is:",
+                  selectedSizeQuantity
+                );
+                console.log(
+                  "selectedSKU is:",
+                  selectedSizeSKU
+                );
 
                 const itemToAdd = {
                   id,
@@ -163,6 +191,8 @@ export default function Card({
                   name,
                   // size: selectedSize,
                   selectedSize,
+                  selectedSizeQuantity,
+                  selectedSizeSKU,
                   finalPrice,
                   image: imgFront,
                   brand,

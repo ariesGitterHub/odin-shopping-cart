@@ -55,11 +55,20 @@ export default function App() {
     const sizes = product.stock
       .filter((item) => item.quantity > 0)
       .map((item) => item.size);
-
+    // START CHANGES...
+        const quantities = product.stock
+          .filter((item) => item.quantity > 0)
+          .map((item) => item.quantity);
+        const skus = product.stock
+          .filter((item) => item.quantity > 0)
+          .map((item) => item.sku);
+//END CHANGES
     return {
       ...product,
       currentTotalStockNumber: total,
       availableSizes: sizes,
+      availableQuantities: quantities,
+      availableSKUs: skus,
     };
   });
 
