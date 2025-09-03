@@ -36,7 +36,7 @@ import Button from "../components/Button";
 import styles from "../styles/ShoppingCart.module.css";
 
 export default function ShoppingCart() {
-  const { cartItems, setCartItems } = useCart();
+  const { cartItems, setCartItems, handleRemoveCartItem } = useCart();
 
   const subtotal = cartItems.reduce(
     (acc, item) => acc + item.price * item.quantity,
@@ -51,6 +51,18 @@ export default function ShoppingCart() {
       );
     };
 
+//   const handleRemoveCartItem = (itemToRemove) => {
+//     setCartItems((prevItems) =>
+//       prevItems.filter(
+//         (item) =>
+//           !(
+//             item.id === itemToRemove.id &&
+//             item.sku === itemToRemove.sku
+//           )
+//       )
+//     );
+//   };
+
   return (
     <div className={styles.mainContainer}>
       <h1>shopping cart</h1>
@@ -63,7 +75,8 @@ export default function ShoppingCart() {
             <CheckoutCard
               key={`${item.baseSku}-${item.size}-${index}`}
               item={item}
-              onQuantityChange={handleQuantityChange} // Pass the handler to CheckoutCard
+              onQuantityChange={handleQuantityChange}
+              onRemoveCartItem={handleRemoveCartItem}
             />
           ))
         )}

@@ -63,6 +63,7 @@ export default function App() {
           .filter((item) => item.quantity > 0)
           .map((item) => item.sku);
 //END CHANGES
+
     return {
       ...product,
       currentTotalStockNumber: total,

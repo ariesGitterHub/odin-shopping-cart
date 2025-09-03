@@ -43,6 +43,17 @@ export function CartProvider({ children }) {
     });
   }
 
+          function handleRemoveCartItem(itemToRemove) {
+            setCartItems((prevItems) =>
+              prevItems.filter(
+                (item) =>
+                  !(
+                    item.id === itemToRemove.id && item.sku === itemToRemove.sku
+                  )
+              )
+            );
+          };
+
   useEffect(() => {
     console.log("[CartContext] Current cartItems:", cartItems);
   }, [cartItems]);
@@ -52,7 +63,7 @@ export function CartProvider({ children }) {
     }, [cartItems]);
 
   return (
-    <CartContext.Provider value={{ cartItems, setCartItems, handleAddToCart }}>
+    <CartContext.Provider value={{ cartItems, setCartItems, handleAddToCart, handleRemoveCartItem }}>
       {children}
     </CartContext.Provider>
   );

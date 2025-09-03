@@ -90,20 +90,4 @@ h1 {
   cursor: pointer;
 }
 
-/* TODO - delete/move to Button.module.jsx */
-.paypalButton {
-    /* PayPal Yellow? */
-  background-color: #ffc439;
-}
 
-.cardButton {
-    /* Credit Card Blue? */
-  background-color: #0070f3;
-  color: white;
-}
-
-.appleButton {
-    /* Steve Jobs Black? */
-  background-color: #000;
-  color: white;
-}

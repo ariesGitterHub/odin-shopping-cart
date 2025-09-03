@@ -1,8 +1,12 @@
-.card {
+.cardContainer {
   height: fit-content;
   width: fit-content;
-  background-color: var(--gold);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  background-color: var(--gold-lt);
   border-radius: 0.5rem;
+  box-shadow: 5px 5px 100px 5px var(--gold);
   font-family: var(--font-text);
   padding: 1rem;
   text-transform: capitalize;
@@ -10,31 +14,43 @@
 
 .nameContainer {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: start;
-  flex-wrap: nowrap;
-  margin-bottom: 1rem;
+  justify-content: center;
+  /* gap: 0.125rem; */
+  /* flex-wrap: nowrap; */
+  /* font-size: 1.125rem; */
+  /* margin-bottom: 1rem; */
 }
 
 .name {
   font-family: var(--font-title);
   /* font-size: 1rem; */
   color: var(--rose-dk);
+  /* margin: 0; */
+}
+
+.availableQuantityInSize {
+    font-size: 1rem;
+    font-weight: 800;
+    /* margin: 0.25rem; */
+    text-transform: uppercase;
 }
 
 .brand {
   font-family: var(--font-text);
   /* font-size: 1rem; */
-  /* font-style: italic; */
+  font-style: italic;
+  margin-top: 0.125rem;
   /* margin-bottom: 0.5rem; */
   /* text-decoration: underline; */
-  text-transform: lowercase;
+  /* text-transform: lowercase; */
 }
 
-.name,
+/* .name,
 .brand {
   font-size: 1rem;
-}
+} */
 
 .dinojama,
 .jammyMart,
@@ -62,13 +78,23 @@
   font-family: var(--font-spanko);
 }
 
-.productReminder {
+/* .productReminder {
   font-style: italic;
+} */
+
+
+
+.rowContainer {
+  display: flex;
+  gap: 0.5rem;
 }
 
-.innerContainer {
-  display: inline-flex;
-  gap: 0.5rem;
+.colContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  /* gap: 1rem; */
 }
 
 .imageContainer {
@@ -79,6 +105,7 @@
   align-items: center;
   justify-content: space-around;
   background-color: var(--white);
+  border: 4px solid var(--gold-lt);
   border-radius: 0.5rem;
     color: var(--frog-black);
   object-fit: contain;
@@ -86,15 +113,8 @@
 }
 
 .image {
-  height: 8rem;
+  height: 9rem;
   width: auto;
-}
-
-.productDetails {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  font-size: 1rem;
 }
 
 .sizeUppercase {
@@ -103,15 +123,45 @@
 
 .price {
     color: var(--frog-dk);
+        font-size: 1.5rem;
   font-weight: 800;
 }
 
-.productDetails p {
-    height: fit-content;
-    width: 6rem;
-  background-color: var(--white);
+.quantityContainer, .priceContainer {
+    height: 5.85rem;
+    width: 7.5rem;
+      display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+
+  /* background-color: var(--rose-lt); */
   border-radius: 0.5rem;
-  color: var(--frog-black);
-  padding: 0.125rem;
-  text-align: left;
+  border: 4px solid var(--gold-lt);
+    font-size: 1rem;
+    font-weight: 800;
+  padding: 0.25rem;
+
+  text-transform: uppercase;
+}
+
+.quantityContainer {
+background-color: var(--rose-lt);
+}
+
+.priceContainer {
+    background-color: var(--frog-lt);
+}
+
+.quantityControl {
+        height: fit-content;
+    width: 6rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    color: var(--rose-dk);
+    font-size: 1.5rem;
+    /* font-weight: 800; */
 }
