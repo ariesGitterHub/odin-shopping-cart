@@ -1,5 +1,5 @@
 import { createBrowserRouter } from "react-router-dom";
-import App from "./App"; // Correct import with proper file path
+import App from "./App";
 import Home from "./pages/Home";
 import Shop from "./pages/Shop";
 import About from "./pages/About";
@@ -14,11 +14,11 @@ export const router = createBrowserRouter([
     element: <App />, // Layout wrapper component
     errorElement: <NotFound />, // 404 page for undefined routes
     children: [
-      { index: true, element: <Home /> }, // Home page
-      { path: "shop", element: <Shop /> }, // Contact page
-      { path: "about", element: <About /> }, // About page
-      { path: "contact", element: <Contact /> }, // Contact
-      { path: "shopping-cart", element: <ShoppingCart /> }, // Shopping cart page, keep? Or use modal?
+      { index: true, element: <Home /> },
+      { path: "shop", element: <Shop /> },
+      { path: "about", element: <About /> },
+      { path: "contact", element: <Contact /> },
+      { path: "shopping-cart", element: <ShoppingCart /> },
     ],
   },
   {

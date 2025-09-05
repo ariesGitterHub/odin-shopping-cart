@@ -1,0 +1,54 @@
+.mainContainer {
+  height: fit-content;
+  max-width: 650px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  background: linear-gradient(0deg, var(--frog-white), var(--rose-dk));
+  border-radius: 1rem;
+  box-shadow: 5px 5px 100px 5px var(--frog-dk);
+  margin: 0.5rem;
+}
+
+.titleTextContainer {
+  height: fit-content;
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: start;
+  margin: 1rem;
+}
+
+.titleTextContainer h1 {
+  color: var(--gold);
+  font-family: var(--font-title);
+  font-size: 3rem;
+}
+
+.titleTextContainer p {
+  font-family: var(--font-text);
+  font-size: 1.25rem;
+  font-weight: 500;
+}
+
+.titleTextContainer span {
+  font-family: var(--font-text);
+  font-weight: 800;
+}
+
+.imageContainer {
+  height: fit-content;
+  width: fit-content;
+  margin: 1rem;
+}
+
+.imageContainer img {
+  height: 18rem;
+  width: 18rem;
+  border-radius: 50%;
+  object-fit: contain;
+}

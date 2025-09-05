@@ -1,41 +1,22 @@
-
-import styles from "../styles/Shop.module.css";
-// import { inventory } from "../data/inventory";
 import { useOutletContext } from "react-router-dom";
-
+import styles from "../styles/Shop.module.css";
+import Card from "../components/Card";
 import imgSizesDinojama from "../assets/imgSizesDinojama.JPG";
 import imgSizesJammyMart from "../assets/imgSizesJammyMart.JPG";
 import imgSizesMooshiDoo from "../assets/imgSizesMooshiDoo.JPG";
 import imgSizesPlushies from "../assets/imgSizesPlushies.JPG";
 import imgSizesSpanko from "../assets/imgSizesSpanko.JPG";
-import imgSizes from "../assets/imgSizesSpanko.JPG";
-
-import Card from "../components/Card";
+import imgSizes from "../assets/imgSizes.JPG";
 
 export default function Shop() {
 
   const {
     filteredProducts, 
-    //onesies
    } = useOutletContext();
-
-  // const onesies = inventory.map((product) => {
-  //   const total = product.stock.reduce((sum, item) => sum + item.quantity, 0);
-  //   const sizes = product.stock
-  //     .filter((item) => item.quantity > 0)
-  //     .map((item) => item.size);
-
-  //   return {
-  //     ...product,
-  //     currentTotalStockNumber: total,
-  //     availableSizes: sizes,
-  //   };
-  // });
 
   return (
     <div className={styles.mainContainer}>
-      {/* BELOW - filteredProducts replaces onesies */}
-      {/* {onesies.map((card) => ( */}
+      {/* BELOW - Remember! The imported filteredProducts becomes the new version of the onesies data array */}
       {filteredProducts.length > 0 ? (
         filteredProducts.map((card) => (
           <div key={card.id}>
@@ -62,10 +43,8 @@ export default function Shop() {
               stock={card.stock}
               stockNumber={card.currentTotalStockNumber}
               availableSizes={card.availableSizes}
-              // START CHANGES
               availableQuantities={card.availableQuantities}
               availableSKUs={card.availableSKUs}
-              // END CHANGES
               rating={card.rating}
               numberReviews={card.numberReviews}
               price={card.price}
@@ -73,7 +52,7 @@ export default function Shop() {
           </div>
         ))
       ) : (
-        <p className={styles.noProductsFound}>no products found...</p> // Fallback when no products match the search
+        <p className={styles.noProductsFound}>No products found...</p> // Fallback when no products match the search
       )}
     </div>
   );

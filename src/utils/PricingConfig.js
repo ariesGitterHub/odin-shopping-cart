@@ -1,4 +1,9 @@
-export default function PricingConfig({ price, stockNumber, rating, numberReviews }) {
+export default function PricingConfig({
+  price,
+  stockNumber,
+  rating,
+  numberReviews,
+}) {
   // No discount for out-of-stock
   if (stockNumber === 0) {
     return {
@@ -46,9 +51,4 @@ export default function PricingConfig({ price, stockNumber, rating, numberReview
     finalPrice,
     reason,
   };
-// return (
-//     <>
-//     {discountPercent === 0 ? (<p>Price: ${finalPrice}</p>) : (<p>{finalPrice} (Discount of {discountPercent}</p>)}
-//     </>
-// )
 }

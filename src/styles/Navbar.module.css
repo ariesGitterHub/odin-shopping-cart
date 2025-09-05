@@ -1,8 +1,8 @@
 .navbar {
-  height: fit-content;
-  width: 100vw;
   position: sticky;
   top: 0;
+  height: fit-content;
+  width: 100vw;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -55,7 +55,6 @@
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  /* background-color: var(--rose-lt); */
   border-radius: 2rem;
   font-family: var(--font-text);
   margin: 0.5rem;
@@ -65,36 +64,16 @@
 .search {
   height: 2rem;
   width: 35ch;
-    border-radius: 0.5rem;
-
+  border-radius: 0.5rem;
   font-family: var(--font-text);
-  /* margin-left: 0.5rem; */
 }
 
 .cartItemsContainer {
-  position: relative;  /* Ensure the badge is positioned relative to this container */
-
+  position: relative; /* Ensures the number circle is positioned relative to this container */
   display: flex;
   align-items: center;
   justify-content: end;
-  /* margin-left: 2.25rem; */
 }
-
-/* .cartItemsNum {
-  height: fit-content;
-  width: fit-content;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: var(--gold);
-  border-radius: 50%;
-  color: var(--frog-black);
-  font-family: var(--font-text);
-  font-size: 1rem;
-  font-weight: 600;
-  opacity: 0.8;
-  padding: 0.25rem 0.75rem;
-} */
 
 .cartItemsNum {
   position: absolute; /* Position it on top of the cart icon */
@@ -106,7 +85,6 @@
   align-items: center;
   justify-content: center;
   background-color: var(--gold);
-  /* border: 4px solid var(--rose-dk); */
   border-radius: 50%;
   color: var(--frog-black);
   font-family: var(--font-text);

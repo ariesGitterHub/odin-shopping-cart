@@ -21,7 +21,7 @@ export default function RatingStars({ rating }) {
     stars.push(<img key="half" src={imgStarHalf} alt="Half star" />);
   }
 
-  // Add empty stars
+  // Add empty star
   const emptyStars = totalStars - fullStars - (hasHalfStar ? 1 : 0);
   for (let i = 0; i < emptyStars; i++) {
     stars.push(<img key={`empty-${i}`} src={imgStarEmpty} alt="Empty star" />);

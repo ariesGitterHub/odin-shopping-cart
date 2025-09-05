@@ -104,7 +104,7 @@ export default function Card({
     <div className={styles.cardContainer}>
       <h1>{name}</h1>
       <p className={styles.brand}>
-        by&nbsp;
+        By&nbsp;
         {brand === "dinojama" ? (
           <span className={styles.dinojama}>{brand}</span>
         ) : brand === "jammy mart" ? (
@@ -150,16 +150,16 @@ export default function Card({
       </div>
       <div className={styles.detailsContainer}>
         {stockNumber < 1 ? (
-          <p className={styles.outOfStock}>out of stock</p>
+          <p className={styles.outOfStock}>Out of stock</p>
         ) : (
-          <p className={styles.stockNumber}>{stockNumber} left</p>
+          <p className={styles.stockNumber}>{stockNumber} Left</p>
         )}
         <div className={styles.sizes}>
           {availableSizes.length === 0 ? (
-            <p>no sizes available</p>
+            <p>No sizes available</p>
           ) : (
             <>
-              <p>sizes:&nbsp;</p>
+              <p>Sizes:&nbsp;</p>
               {availableSizes.map((size, index) => (
                 <span key={index} className={styles.sizeItem}>
                   {size}
@@ -170,7 +170,7 @@ export default function Card({
         </div>
         <div className={styles.rating}>
           <p>{rating}</p> <RatingStars rating={rating} />
-          <p>({numberReviews} reviews)</p>
+          <p>({numberReviews} Reviews)</p>
         </div>
         <div className={styles.priceContainer}>
           <div key={id}>

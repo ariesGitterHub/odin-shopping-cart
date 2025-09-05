@@ -30,7 +30,7 @@ export function CartProvider({ children }) {
           console.warn(
             `[CartContext] Cannot add more. Already at max quantity for SKU ${selectedSizeSKU}.`
           );
-          return prev; // No changes to cart
+          return prev; // No changes to cart!
         }
 
         const updated = [...prev];

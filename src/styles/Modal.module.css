@@ -11,6 +11,7 @@
   z-index: 1000;
 }
 
+/* TODO - Only delete below after testing deployment in various mobile browsers */
 /* .modal {
   position: relative;
   max-width: 85%;
@@ -26,6 +27,7 @@
   align-items: center;
 }
 
+/* TODO - Only delete below after testing deployment in various mobile browsers */
 /* .image {
   height: 100%;
   width: auto;
@@ -79,6 +81,7 @@
   font-size: 3.75rem;
 }
 
+/* TODO - Only delete below after testing deployment in various mobile browsers */
 /* @media (max-width: 600px) {
   .modal {
     max-width: 95vw;
