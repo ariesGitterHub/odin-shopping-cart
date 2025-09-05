@@ -8,5 +8,13 @@ export default defineConfig({
     globals: true,
     environment: "jsdom",
     setupFiles: "./tests/setup.js",
+    //include: ["**/*.test.{js,jsx,ts,tsx}"], // Optional: define file patterns to include tests
+    css: {
+      modules: {
+        scopeBehaviour: "local",
+        generateScopedName: "[local]", // This will keep the class names as-is in tests
+      },
+    },
   },
 });
+
