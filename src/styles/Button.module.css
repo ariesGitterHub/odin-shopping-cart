@@ -7,20 +7,17 @@
   border: transparent;
   cursor: pointer;
   font-size: 1rem;
-  /* padding: 0.5rem; */
 }
-
-/* TODO - set up a default style? */
 
 .cart {
   background-color: var(--frog-dk);
-    border: 0.125rem solid var(--frog-black);
+  border: 0.125rem solid var(--frog-black);
   border-radius: 4px;
   color: var(--white);
   cursor: pointer;
   font-family: var(--font-text);
   font-size: 1rem;
-    padding: 0.5rem 1rem;
+  padding: 0.5rem 1rem;
   text-transform: uppercase;
 }
 
@@ -30,29 +27,24 @@
   color: var(--frog-black);
 }
 
+/* NOTE - Don't use css variable colors (i.e., var) on the following three buttons, leave as is for future ease of cut & paste into other projects */
+
 .paypalButton {
-    /* PayPal Yellow? */
+  /* PayPal Yellow? */
   background-color: #ffc439;
+  color: var(--frog-black);
 }
 
 .cardButton {
-    /* Credit Card Blue? */
+  /* Credit Card Blue? */
   background-color: #0070f3;
   color: white;
 }
 
 .appleButton {
-    /* Steve Jobs Black? */
+  /* Steve Jobs Black? */
   background-color: #000;
   color: white;
-}
-
-.cart:hover, .paypalButton:hover, .cardButton:hover, .appleButton:hover {
-  transform: scale(1.05);
-}
-
-.cart:active, .paypalButton:active, .cardButton:active, .appleButton:active {
-  transform: scale(0.95);
 }
 
 .incrementDecrementButton {
@@ -61,22 +53,39 @@
   background-color: var(--rose-dk);
   border-radius: 4px;
   color: var(--gold);
-cursor: pointer;
-font-family: var(--font-text);
-font-size: 1.5rem;
+  cursor: pointer;
+  font-family: var(--font-text);
+  font-size: 1.5rem;
 }
 
 .removeCartItem {
   display: block;
   width: 100%;
   background-color: var(--frog-black);
-   border: 4px solid var(--gold-lt);
-border-radius: 0.5rem;
+  border: 4px solid var(--gold-lt);
+  border-radius: 0.5rem;
   color: var(--gold-lt);
-  cursor: pointer; 
- font-size: 1rem;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 800;
+  padding: 0.75rem;
+  text-transform: uppercase;
+}
 
-    padding: 0.75rem;
- 
-text-transform: uppercase;
+.cart:hover,
+.paypalButton:hover,
+.cardButton:hover,
+.appleButton:hover,
+.incrementDecrementButton:hover,
+.removeCartItem:hover {
+  transform: scale(1.05);
+}
+
+.cart:active,
+.paypalButton:active,
+.cardButton:active,
+.appleButton:active,
+.incrementDecrementButton:active,
+.removeCartItem:active {
+  transform: scale(0.95);
 }

@@ -30,6 +30,7 @@
   color: var(--frog-black);
   font-family: var(--font-text);
   font-size: 1.125rem;
+       font-weight: 500;
 }
 
 .imgContainer {
@@ -70,12 +71,14 @@
 .textContainer h3 {
   color: var(--frog-dk);
   font-size: 1.125rem;
+
   text-align: left;
 }
 
 .textContainer p {
   color: var(--frog-black);
   font-size: 1.125rem;
+     font-weight: 500;
   text-align: left;
 }
 

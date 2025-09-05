@@ -10,7 +10,13 @@ export default function Dropdown({ label = "Select", options = [], onSelect }) {
   const handleSelect = (option) => {
     setSelected(option);
     onSelect?.(option);
-    setIsOpen(false);
+    // setIsOpen(false);
+    // setTimeout(() => setIsOpen(false), 3000);
+      // console.log("Will close in 3s...");
+      setTimeout(() => {
+        // console.log("Closing now.");
+        setIsOpen(false);
+      }, 3000);
   };
 
   return (
@@ -20,13 +26,13 @@ export default function Dropdown({ label = "Select", options = [], onSelect }) {
       </button>
       {isOpen && (
         <ul className={styles.dropdownList}>
-          {options.map((opt, idx) => (
+          {options.map((option, index) => (
             <li
-              key={idx}
-              onClick={() => handleSelect(opt)}
+              key={index}
+              onClick={() => handleSelect(option)}
               className={styles.dropdownItem}
             >
-              {opt}
+              {option}
             </li>
           ))}
         </ul>

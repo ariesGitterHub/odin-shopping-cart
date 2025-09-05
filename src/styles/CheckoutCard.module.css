@@ -7,6 +7,7 @@
   background-color: var(--gold-lt);
   border-radius: 0.5rem;
   box-shadow: 5px 5px 100px 5px var(--gold);
+  color: var(--frog-black);
   font-family: var(--font-text);
   padding: 1rem;
   text-transform: capitalize;
@@ -17,47 +18,30 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  /* gap: 0.125rem; */
-  /* flex-wrap: nowrap; */
-  /* font-size: 1.125rem; */
-  /* margin-bottom: 1rem; */
 }
 
 .name {
   font-family: var(--font-title);
-  /* font-size: 1rem; */
   color: var(--rose-dk);
-  /* margin: 0; */
 }
 
 .availableQuantityInSize {
-    font-size: 1rem;
-    font-weight: 800;
-    /* margin: 0.25rem; */
-    text-transform: uppercase;
+  font-size: 1rem;
+  font-weight: 800;
+  text-transform: uppercase;
 }
 
 .brand {
   font-family: var(--font-text);
-  /* font-size: 1rem; */
   font-style: italic;
   margin-top: 0.125rem;
-  /* margin-bottom: 0.5rem; */
-  /* text-decoration: underline; */
-  /* text-transform: lowercase; */
 }
-
-/* .name,
-.brand {
-  font-size: 1rem;
-} */
 
 .dinojama,
 .jammyMart,
 .mooshiFoo,
 .plushies,
 .spanko {
-  /* font-size: 1rem; */
   font-style: normal;
   text-transform: capitalize;
 }
@@ -65,24 +49,22 @@
 .dinojama {
   font-family: var(--font-dinojama);
 }
+
 .jammyMart {
   font-family: var(--font-jammy-mart);
 }
+
 .mooshiDoo {
   font-family: var(--font-mooshiDoo);
 }
+
 .plushies {
   font-family: var(--font-plushies);
 }
+
 .spanko {
   font-family: var(--font-spanko);
 }
-
-/* .productReminder {
-  font-style: italic;
-} */
-
-
 
 .rowContainer {
   display: flex;
@@ -94,7 +76,6 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  /* gap: 1rem; */
 }
 
 .imageContainer {
@@ -107,7 +88,7 @@
   background-color: var(--white);
   border: 4px solid var(--gold-lt);
   border-radius: 0.5rem;
-    color: var(--frog-black);
+  color: var(--frog-black);
   object-fit: contain;
   padding: 0.5rem;
 }
@@ -122,46 +103,47 @@
 }
 
 .price {
-    color: var(--frog-dk);
-        font-size: 1.5rem;
+  color: var(--frog-dk);
+  font-size: 1.5rem;
   font-weight: 800;
 }
 
-.quantityContainer, .priceContainer {
-    height: 5.85rem;
-    width: 7.5rem;
-      display: flex;
+.priceSavings {
+  font-size: 0.7rem;
+}
+
+.quantityContainer,
+.priceContainer {
+  height: 5.85rem;
+  width: 7.5rem;
+  display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.5rem;
-
-  /* background-color: var(--rose-lt); */
+  gap: 0.125rem;
   border-radius: 0.5rem;
   border: 4px solid var(--gold-lt);
-    font-size: 1rem;
-    font-weight: 800;
+  font-size: 1rem;
+  font-weight: 800;
   padding: 0.25rem;
-
   text-transform: uppercase;
 }
 
 .quantityContainer {
-background-color: var(--rose-lt);
+  background-color: var(--rose-lt);
 }
 
 .priceContainer {
-    background-color: var(--frog-lt);
+  background-color: var(--frog-lt);
 }
 
 .quantityControl {
-        height: fit-content;
-    width: 6rem;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    gap: 0.5rem;
-    color: var(--rose-dk);
-    font-size: 1.5rem;
-    /* font-weight: 800; */
+  height: fit-content;
+  width: 6rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  color: var(--rose-dk);
+  font-size: 1.5rem;
 }

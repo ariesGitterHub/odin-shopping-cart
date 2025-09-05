@@ -1,13 +1,12 @@
 .cardContainer {
-  /* TODO - Modulate height later with media queries */
-  height: 33rem;
+  height: fit-content;
   width: fit-content;
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
   align-items: center;
   justify-content: start;
-  background-color: white;
+  background-color: var(--white);
   border-radius: 1rem;
   box-shadow: 5px 5px 100px 5px var(--frog-dk);
   padding: 1rem;
@@ -26,7 +25,6 @@
   font-size: 1rem;
   font-style: italic;
   margin-bottom: 0.5rem;
-  /* text-decoration: underline; */
   text-transform: lowercase;
 }
 
@@ -43,15 +41,19 @@
 .dinojama {
   font-family: var(--font-dinojama);
 }
+
 .jammyMart {
   font-family: var(--font-jammy-mart);
 }
+
 .mooshiDoo {
   font-family: var(--font-mooshiDoo);
 }
+
 .plushies {
   font-family: var(--font-plushies);
 }
+
 .spanko {
   font-family: var(--font-spanko);
 }
@@ -94,7 +96,7 @@
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  background-color: white;
+  background-color: var(--white);
   font-family: var(--font-text);
   padding: 0.5rem;
 }
@@ -106,6 +108,14 @@
 .priceContainer {
   color: var(--frog-black);
   font-size: 1.25rem;
+}
+
+.priceSavings {
+  background-color: var(--gold);
+  border: 4px dashed var(--frog-black);
+  border-radius: 4px;
+  font-style: italic;
+  padding: 0.25rem 0.5rem;
 }
 
 .stockNumber,
@@ -127,23 +137,36 @@
   font-style: italic;
 }
 
-/* Below, what was this??? */
-.sizeList {
-  /* display: flex;
-  gap: 0.125rem;
-  flex-wrap: wrap;
-  text-transform: uppercase; */
-}
-
 .sizeItem {
   width: 1.5rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: white;
+  background-color: var(--white);
   border-radius: 50%;
   font-size: 0.8rem;
   font-weight: bold;
   padding: 0.125rem 0.25rem;
   text-transform: uppercase;
+}
+
+.sizeWarningMessage {
+  width: 100%;
+  display: inline-block;
+  animation: fadeInOut 3s ease-in-out forwards;
+  background-color: var(--gold-lt);
+  border: 4px solid var(--rose-dk);  
+  border-radius: 4px;  
+  color: var(--rose-dk);
+  font-weight: 800;
+  margin-top: 1rem;
+  padding: 6px 10px;
+  text-align: center;
+}
+
+@keyframes fadeInOut {
+  0% { opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { opacity: 0; }
 }

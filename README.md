@@ -1,4 +1,5 @@
-# Project: Shopping Cart
+# Project: Shopping Cart 
+(https://www.theodinproject.com/lessons/node-path-react-new-shopping-cart)
 
 ## Project: Shopping Cart
 Create a new React project.
@@ -28,3 +29,15 @@ Lastly, it’s time to deploy it! Depending on what hosting solution you’re us
 Netlify: You need to add a _redirects file to the public/ directory of your project. Copy the following to redirect all routes to the index page and let react-router-dom handle the rest. You can read more about this at the Netlify documentation on redirects.
 
 /* /index.html 200
+
+Vercel: You need to add a vercel.json file at the root of your project and copy the following configuration. Similar to Netlify, this redirects all routes to the index page and lets react-router-dom handle the rest. More information can be found here at the Vercel documentation for SPAs and Vite.
+
+{
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ]
+}
+Cloudflare Pages: As of the time of writing, unlike Netlify and Vercel, no additional steps are required as the default behaviour will allow react-router-dom to correctly handle redirects for SPAs. You can learn more about this at the Cloudflare documentation on serving pages.

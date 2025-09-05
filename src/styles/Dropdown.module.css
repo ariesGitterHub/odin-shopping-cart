@@ -1,7 +1,6 @@
-/* TODO - REORDER CSS */
 .dropdown {
-  display: inline-block;
   position: relative;
+  display: inline-block;
   color: var(--frog-black);
   font-family: var(--font-text);
 }
@@ -18,10 +17,10 @@
 }
 
 .dropdownList {
-  width: 5rem;
   position: absolute;
-  background: white;
-  border: 1px solid #ccc;
+  width: 5rem;
+  background: var(--white);
+  border: 1px solid var(--frog-black);
   border-radius: 4px;
   list-style: none;
   margin-top: 0.3rem;
