@@ -13,3 +13,7 @@
   text-transform: uppercase;
   padding: 1rem;
 }
+
+.noProductsFound {
+  color: var(--frog-black);
+}

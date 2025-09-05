@@ -1,4 +1,4 @@
-import { createContext, useContext, useState, useEffect } from "react";
+import { createContext, useState, useEffect } from "react";
 
 const CartContext = createContext();
 
@@ -9,7 +9,6 @@ export function CartProvider({ children }) {
     id,
     baseSKU,
     name,
-    // size,
     selectedSize,
     selectedSizeQuantity,
     selectedSizeSKU,
@@ -19,19 +18,10 @@ export function CartProvider({ children }) {
     brand,
   }) {
     setCartItems((prev) => {
-      // const existingIndex = prev.findIndex(
-      //   // (item) => item.id === id && item.size === size
-      //   (item) => item.id === id && item.size === size
-      // );
       const existingIndex = prev.findIndex(
         (item) => item.sku === selectedSizeSKU
       );
 
-      // if (existingIndex !== -1) {
-      //   const updated = [...prev];
-      //   updated[existingIndex].quantity += 1;
-      //   return updated;
-      // }
       if (existingIndex !== -1) {
         const existingItem = prev[existingIndex];
 
@@ -40,7 +30,7 @@ export function CartProvider({ children }) {
           console.warn(
             `[CartContext] Cannot add more. Already at max quantity for SKU ${selectedSizeSKU}.`
           );
-          return prev; // no changes to cart
+          return prev; // No changes to cart
         }
 
         const updated = [...prev];
@@ -93,7 +83,10 @@ export function CartProvider({ children }) {
   );
 }
 
-// This is a custom hook
-export function useCart() {
-  return useContext(CartContext);
-}
+// This is a custom hook...
+// NOTE - Below was moved to its own file after installing eslint to autofix import order
+// export function useCart() {
+//   return useContext(CartContext);
+// }
+
+export { CartContext };

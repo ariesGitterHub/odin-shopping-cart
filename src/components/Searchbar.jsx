@@ -1,6 +1,5 @@
 import { useState } from "react";
-import styles from "../styles/Navbar.module.css"; // TODO- move later in it's own module.css
-// import Dropdown from "./Dropdown";
+import styles from "../styles/Navbar.module.css";
 
 export default function Searchbar({ onSearch }) {
   const [timer, setTimer] = useState(null); // Track the timer state
@@ -18,22 +17,17 @@ export default function Searchbar({ onSearch }) {
       onSearch(value); // Execute the search after the delay
     }, 300); // Adjust the delay time as needed
 
-    setTimer(newTimer); // Store the new timer ID
+    setTimer(newTimer); // Store the new timer value
   };
   return (
     <div className={styles.searchContainer}>
-      {/* <p>Search</p> */}
       <form action="">
-        {/* <fieldset> */}
-        {/* <legend>By title or author</legend> */}
-        {/* <label for="search-term"></label> */}
         <input
           type="text"
           className={styles.search}
           placeholder="Search by animal (e.g., lion, feline, mammal)..."
           onChange={handleChange} // Calls handleChange to update searchQuery
         />
-        {/* </fieldset>        */}
       </form>
     </div>
   );

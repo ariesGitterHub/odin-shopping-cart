@@ -1,12 +1,12 @@
 import { useState } from "react";
-import { useCart } from "../context/CartContext";
+import { useCart } from "../context/useCart";
 import styles from "../styles/Card.module.css";
-import RatingStars from "../utils/RatingStars";
-import ProductPrice from "./ProductPrice";
-import PriceConfig from "../utils/PricingConfig";
-import Modal from "./Modal";
-import Dropdown from "./Dropdown";
 import Button from "./Button";
+import Dropdown from "./Dropdown";
+import Modal from "./Modal";
+import PriceConfig from "../utils/PricingConfig";
+import ProductPrice from "./ProductPrice";
+import RatingStars from "../utils/RatingStars";
 
 export default function Card({
   id,
@@ -29,7 +29,7 @@ export default function Card({
   const [selectedSize, setSelectedSize] = useState(null);
   const [selectedSizeQuantity, setSelectedSizeQuantity] = useState(null);
   const [selectedSizeSKU, setSelectedSizeSKU] = useState(null);
-  const [showSizeWarning, setShowSizeWarning] = useState(false); 
+  const [showSizeWarning, setShowSizeWarning] = useState(false);
   const [sizeWarningText, setSizeWarningText] = useState("");
 
   const images = [imgFront, imgRear, imgSizing];
@@ -59,108 +59,46 @@ export default function Card({
     setSelectedSizeSKU(availableSKUs[sizeIndex]);
   };
 
-  // const handleClick = () => {
-  //   if (!selectedSize) {
-  //     setShowSizeWarning(true);
-  //     setTimeout(() => setShowSizeWarning(false), 3000); // ✅ Auto-hide
-  //     return;
-  //   }
+  const handleClick = () => {
+    if (!selectedSize) {
+      setSizeWarningText("Please select a size.");
+      setShowSizeWarning(true);
+      setTimeout(() => setShowSizeWarning(false), 3000);
+      return;
+    }
 
-  //   const itemToAdd = {
-  //     id,
-  //     baseSKU,
-  //     name,
-  //     selectedSize,
-  //     selectedSizeQuantity,
-  //     selectedSizeSKU,
-  //     finalPrice,
-  //     discountPercent,
-  //     image: imgFront,
-  //     brand,
-  //   };
+    const currentCartItem = cartItems.find(
+      (item) => item.sku === selectedSizeSKU
+    );
 
-  //   handleAddToCart(itemToAdd);
-  // };
+    const currentQuantityInCart = currentCartItem
+      ? currentCartItem.quantity
+      : 0;
 
-// const handleClick = () => {
-// if (!selectedSize) {
-//   setSizeWarningText("Please select a size.");
-//   setShowSizeWarning(true);
-//   setTimeout(() => setShowSizeWarning(false), 3000);
-//   return;
-// }
+    if (currentQuantityInCart >= selectedSizeQuantity) {
+      setSizeWarningText(
+        `Only ${selectedSizeQuantity} in stock for this size.`
+      );
+      setShowSizeWarning(true);
+      setTimeout(() => setShowSizeWarning(false), 3000);
+      return;
+    }
 
-// if (currentQuantityInCart >= selectedSizeQuantity) {
-//   setSizeWarningText(`Only ${selectedSizeQuantity} in stock for this size.`);
-//   setShowSizeWarning(true);
-//   setTimeout(() => setShowSizeWarning(false), 3000);
-//   return;
-// }
+    const itemToAdd = {
+      id,
+      baseSKU,
+      name,
+      selectedSize,
+      selectedSizeQuantity,
+      selectedSizeSKU,
+      finalPrice,
+      discountPercent,
+      image: imgFront,
+      brand,
+    };
 
-//   const currentCartItem = cartItems.find(
-//     (item) => item.sku === selectedSizeSKU
-//   );
-
-//   const currentQuantityInCart = currentCartItem ? currentCartItem.quantity : 0;
-
-//   if (currentQuantityInCart >= selectedSizeQuantity) {
-//     setShowSizeWarning(true);
-//     return;
-//   }
-
-//   const itemToAdd = {
-//     id,
-//     baseSKU,
-//     name,
-//     selectedSize,
-//     selectedSizeQuantity,
-//     selectedSizeSKU,
-//     finalPrice,
-//     discountPercent,
-//     image: imgFront,
-//     brand,
-//   };
-
-//   handleAddToCart(itemToAdd);
-// };
-
-const handleClick = () => {
-  if (!selectedSize) {
-    setSizeWarningText("Please select a size.");
-    setShowSizeWarning(true);
-    setTimeout(() => setShowSizeWarning(false), 3000);
-    return;
-  }
-
-  const currentCartItem = cartItems.find(
-    (item) => item.sku === selectedSizeSKU
-  );
-
-  const currentQuantityInCart = currentCartItem ? currentCartItem.quantity : 0;
-
-  if (currentQuantityInCart >= selectedSizeQuantity) {
-    setSizeWarningText(`Only ${selectedSizeQuantity} in stock for this size.`);
-    setShowSizeWarning(true);
-    setTimeout(() => setShowSizeWarning(false), 3000);
-    return;
-  }
-
-  const itemToAdd = {
-    id,
-    baseSKU,
-    name,
-    selectedSize,
-    selectedSizeQuantity,
-    selectedSizeSKU,
-    finalPrice,
-    discountPercent,
-    image: imgFront,
-    brand,
+    handleAddToCart(itemToAdd);
   };
-
-  handleAddToCart(itemToAdd);
-};
-
 
   return (
     <div className={styles.cardContainer}>
@@ -181,7 +119,6 @@ const handleClick = () => {
           <span>{brand}</span>
         )}
       </p>
-
       <div className={styles.imgContainer}>
         <img
           src={imgFront}
@@ -211,14 +148,12 @@ const handleClick = () => {
           )}
         </div>
       </div>
-
       <div className={styles.detailsContainer}>
         {stockNumber < 1 ? (
           <p className={styles.outOfStock}>out of stock</p>
         ) : (
           <p className={styles.stockNumber}>{stockNumber} left</p>
         )}
-
         <div className={styles.sizes}>
           {availableSizes.length === 0 ? (
             <p>no sizes available</p>
@@ -233,12 +168,10 @@ const handleClick = () => {
             </>
           )}
         </div>
-
         <div className={styles.rating}>
           <p>{rating}</p> <RatingStars rating={rating} />
           <p>({numberReviews} reviews)</p>
         </div>
-
         <div className={styles.priceContainer}>
           <div key={id}>
             <ProductPrice
@@ -253,7 +186,6 @@ const handleClick = () => {
             <p className={styles.priceSavings}>Save {discountPercent}%</p>
           )}
         </div>
-
         <div className={styles.buttonContainer}>
           {availableSizes.length > 0 && (
             <>
@@ -262,16 +194,9 @@ const handleClick = () => {
                 options={availableSizes}
                 onSelect={handleSizeSelect}
               />
-
               <Button variant="cart" onClick={handleClick}>
                 Add to Cart
               </Button>
-
-              {/* {showSizeWarning && (
-                <div className={styles.sizeWarningMessage}>
-                  Please select a size.
-                </div>
-              )} */}
               {showSizeWarning && (
                 <div className={styles.sizeWarningMessage}>
                   {sizeWarningText}

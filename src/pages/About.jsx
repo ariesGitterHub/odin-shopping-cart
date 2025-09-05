@@ -18,12 +18,13 @@ export default function About() {
           So whether you're lounging at home or making a statement at your next
           costume party, Funzy Onesies! has your cozy side covered.
         </p>
-
       </div>
-      <div className={styles.imageContainer}>        <img
+      <div className={styles.imageContainer}>
+        <img
           src={imgAbout}
           alt="Same woman wearing a koala onesie shown from different angles."
-        /></div>
+        />
+      </div>
     </div>
   );
 }

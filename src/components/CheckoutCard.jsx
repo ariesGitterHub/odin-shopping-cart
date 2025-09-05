@@ -7,7 +7,6 @@ export default function CheckoutCard({
   onRemoveCartItem,
 }) {
   const {
-    // id, // Not used
     availableQuantityInSize,
     sku,
     name,

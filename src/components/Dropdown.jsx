@@ -10,13 +10,9 @@ export default function Dropdown({ label = "Select", options = [], onSelect }) {
   const handleSelect = (option) => {
     setSelected(option);
     onSelect?.(option);
-    // setIsOpen(false);
-    // setTimeout(() => setIsOpen(false), 3000);
-      // console.log("Will close in 3s...");
-      setTimeout(() => {
-        // console.log("Closing now.");
-        setIsOpen(false);
-      }, 3000);
+    setTimeout(() => {
+      setIsOpen(false);
+    }, 3000);
   };
 
   return (

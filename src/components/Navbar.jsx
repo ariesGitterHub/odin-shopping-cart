@@ -1,8 +1,8 @@
-import { Link, useLocation } from "react-router-dom";
-import favIcon from "../assets/favIcon.svg";
+import { useCart } from "../context/useCart"; // Context imports should be first
+import { Link, useLocation } from "react-router-dom"; // React-router imports second
+import Searchbar from "./Searchbar"; // Component imports follow
+import favIcon from "../assets/favIcon.svg"; // Asset imports come last
 import imgCart from "../assets/imgCart.svg";
-import Searchbar from "./Searchbar";
-import { useCart } from '../context/CartContext';  // Import the useCart hook
 
 import styles from "../styles/Navbar.module.css";
 
@@ -10,7 +10,7 @@ export default function Navbar({ onSearch }) {
   const location = useLocation();
   const onShopPage = location.pathname;
   const { cartItems } = useCart(); // Destructure cartItems from context
-    const totalItems = cartItems.reduce((acc, item) => acc + item.quantity, 0);
+  const totalItems = cartItems.reduce((acc, item) => acc + item.quantity, 0);
 
   return (
     <>

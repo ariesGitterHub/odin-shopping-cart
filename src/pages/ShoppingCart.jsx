@@ -30,7 +30,7 @@
 //   );
 // }
 
-import { useCart } from "../context/CartContext";
+import { useCart } from "../context/useCart";
 import CheckoutCard from "../components/CheckoutCard";
 import Button from "../components/Button";
 import styles from "../styles/ShoppingCart.module.css";

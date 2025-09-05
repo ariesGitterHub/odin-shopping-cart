@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
-import imgHome from "../assets/imgHome.JPG";
 import styles from "../styles/Home.module.css";
+import imgHome from "../assets/imgHome.JPG";
+
 
 export default function Home() {
   return (

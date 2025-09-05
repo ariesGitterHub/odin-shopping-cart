@@ -1,11 +1,10 @@
-import styles from "../styles/Modal.module.css"; //
-
 import { useState, useEffect } from "react";
+import styles from "../styles/Modal.module.css";
 
 const Modal = ({ images, currentIndex, onClose }) => {
   const [index, setIndex] = useState(currentIndex);
 
-  // Handle Escape key to close
+  // Handle ESC key to close, arrow keys to navigate
   useEffect(() => {
     const handleKey = (e) => {
       if (e.key === "Escape") onClose();

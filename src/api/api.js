@@ -1,5 +1,6 @@
-// api.js or inventory.js
-import { inventory } from "../data/inventory"; // Import your static inventory data
+// NOTE - Instead of calling up the web API listed in the project (i.e., https://fakestoreapi.com/), I simulated a backend data setup
+
+import { inventory } from "../data/inventory"; // Import static inventory data
 
 // Simulate a delay like a real API call (e.g., 1 second)
 export const fetchInventory = () => {
