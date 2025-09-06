@@ -48,7 +48,8 @@
 
 .closeButton {
   position: absolute;
-  top: 0.5rem;
+  /* top: 0.5rem; */
+  top: 0rem;
   right: 0.5rem;
   background: transparent;
   border: none;
@@ -62,11 +63,11 @@
   top: 50%;
   left: -1.65rem;
   transform: translateY(-50%);
-  font-size: 3.75rem;
   background: none;
   border: none;
   color: var(--frog-black);
   cursor: pointer;
+  font-size: 3.75rem;
 }
 
 .arrowRight {

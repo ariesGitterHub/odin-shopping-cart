@@ -9,9 +9,9 @@
   gap: 1rem;
   border-radius: 1rem;
   font-family: var(--font-title);
-  font-size: 1.5rem;
+  /* font-size: 1.25rem; */
   text-transform: uppercase;
-  padding: 1rem;
+  padding: 0.5rem;
 }
 
 .noProductsFound {

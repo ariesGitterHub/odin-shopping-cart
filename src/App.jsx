@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import { Outlet } from "react-router-dom";
-// import { inventory } from "./data/inventory";
 import { fetchInventory } from "./api/api"; // Import the mock API function
 
 import Navbar from "./components/Navbar";
@@ -14,33 +13,6 @@ export default function App() {
   const [inventoryData, setInventoryData] = useState([]); // State for holding the inventory
   const [loading, setLoading] = useState(true); // State to track loading status
 
-  // const [cartItems, setCartItems] = useState([]);
-
-
-  // const onesies = inventory.map((product) => {
-  //   const total = product.stock.reduce((sum, item) => sum + item.quantity, 0);
-  //   const sizes = product.stock
-  //     .filter((item) => item.quantity > 0)
-  //     .map((item) => item.size);
-
-  //   return {
-  //     ...product,
-  //     currentTotalStockNumber: total,
-  //     availableSizes: sizes,
-  //   };
-  // });
-
-  // const filteredProducts = onesies.filter((product) => {
-  //   const searchLower = searchQuery.toLowerCase(); // Lowercase the search query for case-insensitive matching
-
-  //   // Check if animalType or any of the tags match the search query
-  //   return (
-  //     product.animalType.toLowerCase().includes(searchLower) ||
-  //     product.tags.some((tag) => tag.toLowerCase().includes(searchLower))
-  //   );
-  // });
-
-  
   useEffect(() => {
     // Simulate fetching the inventory data
     fetchInventory().then((data) => {
@@ -55,14 +27,13 @@ export default function App() {
     const sizes = product.stock
       .filter((item) => item.quantity > 0)
       .map((item) => item.size);
-    // START CHANGES...
-        const quantities = product.stock
-          .filter((item) => item.quantity > 0)
-          .map((item) => item.quantity);
-        const skus = product.stock
-          .filter((item) => item.quantity > 0)
-          .map((item) => item.sku);
-//END CHANGES
+
+    const quantities = product.stock
+      .filter((item) => item.quantity > 0)
+      .map((item) => item.quantity);
+    const skus = product.stock
+      .filter((item) => item.quantity > 0)
+      .map((item) => item.sku);
 
     return {
       ...product,
@@ -94,14 +65,11 @@ export default function App() {
       <CartProvider>
         <Navbar onSearch={setSearchQuery} searchQuery={searchQuery} />
         <main>
-          {/* <CartProvider> */}
           <Outlet
             context={{
               filteredProducts,
-              //onesies
             }}
           />
-          {/* </CartProvider> */}
         </main>
         <Footer />
       </CartProvider>
