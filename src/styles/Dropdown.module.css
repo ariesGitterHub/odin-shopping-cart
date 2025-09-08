@@ -6,7 +6,7 @@
 }
 
 .dropdownButton {
-  width: 4.75rem;
+  width:5rem;
   background: var(--frog-lt);
   border: 0.125rem solid var(--frog-black);
   border-radius: 0.25rem;
@@ -18,7 +18,7 @@
 
 .dropdownList {
   position: absolute;
-  width: 4.75rem;
+  width:5rem;
   background: var(--white);
   border: 1px solid var(--frog-black);
   border-radius: 4px;

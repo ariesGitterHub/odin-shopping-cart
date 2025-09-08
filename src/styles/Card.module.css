@@ -1,7 +1,6 @@
 .cardContainer {
   height: fit-content;
-  /* width: fit-content; */
-    max-width: 20rem;
+  width: fit-content;
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
@@ -126,7 +125,7 @@
 
 .priceSavings {
   background-color: var(--gold);
-  border: 4px dashed var(--frog-black);
+  border: 2px dashed var(--frog-black);
   border-radius: 4px;
   font-style: italic;
   padding: 0.125rem 0.25rem;

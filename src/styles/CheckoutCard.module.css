@@ -1,6 +1,7 @@
 .cardContainer {
   height: fit-content;
-  width: fit-content;
+  /* width: fit-content; */
+  width: 300px;
   display: flex;
   flex-direction: column;
   gap: 0.25rem;
@@ -81,7 +82,8 @@
 }
 
 .imageContainer {
-  height: fit-content;
+  /* height: fit-content; */
+  height: 13.25rem;
   width: 9rem;
   display: flex;
   flex-direction: column;
@@ -117,7 +119,7 @@
 
 .quantityContainer,
 .priceContainer {
-  height: 5.85rem;
+  height: 6.5rem;
   width: 7.5rem;
   display: flex;
   flex-direction: column;
@@ -142,7 +144,8 @@
 
 .quantityControl {
   height: fit-content;
-  width: 6rem;
+  /* width: 6rem; */
+  width: fit-content;
   display: flex;
   flex-direction: row;
   align-items: center;

@@ -4,7 +4,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: space-evenly;
   background: linear-gradient(0deg, var(--frog-white), var(--frog-lt));
   border-radius: 1rem;
   box-shadow: 5px 5px 100px 5px var(--frog-dk);
@@ -37,8 +37,10 @@
 }
 
 .imgContainer img {
-  height: 15rem;
-  width: 15rem;
+  /* height: 15rem;
+  width: 15rem; */
+  height: 20rem;
+  width: 20rem;
   border-radius: 50%;
   box-shadow: 5px 5px 100px 5px var(--frog-white);
   margin-bottom: 1rem;

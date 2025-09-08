@@ -85,7 +85,7 @@ export default function CheckoutCard({
         </div>
       </div>
       <Button variant="removeCartItem" onClick={() => onRemoveCartItem(item)}>
-        Remove Item from Cart
+        Remove Cart Item
       </Button>
     </div>
   );
