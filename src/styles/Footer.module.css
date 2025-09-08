@@ -1,0 +1,12 @@
+.footer {
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: end;
+  color: var(--frog-dk);
+  font-family: var(--font-title);
+  font-size: 0.9rem;
+  margin: 1rem;
+}

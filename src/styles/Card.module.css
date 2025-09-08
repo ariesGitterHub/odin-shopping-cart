@@ -88,12 +88,12 @@
 }
 
 .detailsContainer,
-/* .priceContainer, */
+.priceContainer,
 .buttonContainer {
-  max-width: 20rem;
+  /* max-width: 20rem; */
   /* width: fit-content; */
   display: flex;
-  flex-direction: row;
+  /* flex-direction: row; */
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
@@ -104,23 +104,31 @@
 }
 
 .detailsContainer {
+  height: fit-content;
+  width: 20rem;
+  flex-direction: row;
   font-size: 1rem;
 }
 
 .priceContainer {
-  width: 18.5rem;
+  /* width: 18.5rem; */
   /* width: fit-content; */
-  display: flex;
+  /* display: flex; */
   flex-direction: column;
-  flex-wrap: wrap;
+  /* flex-wrap: wrap;
   align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  background-color: var(--white);
+  justify-content: center; */
+  /* gap: 0.5rem;
+  background-color: var(--white); */
   color: var(--frog-black);
   font-family: var(--font-text);
   font-size: 1.125rem;
   /* padding: 0.25rem; */
+}
+
+.buttonContainer {
+    flex-direction: row;
+      font-size: 1.125rem;
 }
 
 .priceSavings {
@@ -128,7 +136,7 @@
   border: 2px dashed var(--frog-black);
   border-radius: 4px;
   font-style: italic;
-  padding: 0.125rem 0.25rem;
+  padding: 0.25rem;
 }
 
 .stockNumber,

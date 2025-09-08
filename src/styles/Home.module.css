@@ -1,19 +1,21 @@
 .mainContainer {
-  height: fit-content;
-  width: fit-content;
+  max-height: 650px;
+  max-width: 650px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: center;
   background: linear-gradient(0deg, var(--frog-white), var(--frog-lt));
   border-radius: 1rem;
   box-shadow: 5px 5px 100px 5px var(--frog-dk);
+  font-family: var(--font-text);
+  margin: 1rem;
   padding: 1rem;
 }
 
 .title {
   /* color: var(--rose-dk); */
-    color: var(--gold);
+    color: var(--frog-black);
   font-family: var(--font-title);
   text-align: center;
 }
@@ -24,7 +26,8 @@
 }
 
 .title h1 {
-  font-size: 2.75rem;
+  /* font-size: 2.75rem; */
+  font-size: 3rem;
   text-align: center;
 }
 
@@ -44,7 +47,7 @@
   width: 20rem; */
   border-radius: 50%;
   box-shadow: 5px 5px 100px 5px var(--frog-white);
-  margin-bottom: 1rem;
+  margin: 1rem;
   object-fit: contain;
 }
 

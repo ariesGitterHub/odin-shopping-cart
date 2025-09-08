@@ -67,14 +67,3 @@ body {
 li {
   list-style: none;
 }
-
-.footer {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: end;
-  justify-content: center;
-  color: var(--frog-dk);
-  font-family: var(--font-title);
-  font-size: 0.9rem;
-  margin: 1rem;
-}
