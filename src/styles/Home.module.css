@@ -19,7 +19,7 @@
 
 .title {
   color: var(--rose-dk);
-  color: red
+  color: red;
     /* color: var(--frog-black); */
   font-family: var(--font-title);
 
