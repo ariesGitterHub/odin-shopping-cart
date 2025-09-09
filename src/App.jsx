@@ -4,7 +4,7 @@ import { fetchInventory } from "./api/api"; // Import the mock API function
 
 import Navbar from "./components/Navbar";
 import { CartProvider } from "./context/CartContext";
-import Footer from "./components/Footer";
+// import Footer from "./components/Footer";
 
 import "./App.css";
 
@@ -71,8 +71,8 @@ export default function App() {
             }}
           />
         </main>
-        <Footer />
       </CartProvider>
+      {/* <Footer /> */}
     </div>
   );
 }

@@ -105,7 +105,7 @@
 
 .detailsContainer {
   height: fit-content;
-  width: 20rem;
+  width: 18rem;
   flex-direction: row;
   font-size: 1rem;
 }
@@ -127,6 +127,7 @@
 }
 
 .buttonContainer {
+  width: 100%;
     flex-direction: row;
       font-size: 1.125rem;
 }

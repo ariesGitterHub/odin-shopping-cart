@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import styles from "../styles/Home.module.css";
 import imgHome from "../assets/imgHome.JPG";
+import Footer from "../components/Footer";
 
 export default function Home() {
   return (
@@ -15,6 +16,8 @@ export default function Home() {
         </Link>
         <p>Click above to start shopping!</p>
       </div>
+      <br />
+      <Footer />
     </div>
   );
 }

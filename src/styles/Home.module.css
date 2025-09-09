@@ -1,6 +1,10 @@
 .mainContainer {
-  max-height: 650px;
-  max-width: 650px;
+  /* max-height: 650px;
+  max-width: 650px; */
+  /* position: relative;
+  top: 10rem; */
+  height: fit-content;
+  width: fit-content;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -8,21 +12,20 @@
   background: linear-gradient(0deg, var(--frog-white), var(--frog-lt));
   border-radius: 1rem;
   box-shadow: 5px 5px 100px 5px var(--frog-dk);
-  font-family: var(--font-text);
+  font-family: var(--font-title);
   margin: 1rem;
   padding: 1rem;
 }
 
 .title {
-  /* color: var(--rose-dk); */
-    color: var(--frog-black);
+  color: var(--rose-dk);
+    /* color: var(--frog-black); */
   font-family: var(--font-title);
-  text-align: center;
+
 }
 
 .title p {
   font-size: 1.5rem;
-  text-align: left;
 }
 
 .title h1 {
@@ -56,8 +59,9 @@
 }
 
 .imgContainer p {
-  color: var(--frog-black);
-  font-family: var(--font-text);
-  font-size: 1.125rem;
-  text-align: left;
+  color: var(--rose-dk);
+  font-family: var(--font-title);
+  font-size: 1.25rem;
+    text-align: center;
+  text-transform: uppercase;
 }
