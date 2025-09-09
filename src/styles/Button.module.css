@@ -8,7 +8,7 @@
   cursor: pointer;
    font-family: var(--font-text);
   font-size: 1rem;
-  padding: 0.5rem;
+  /* padding: 0.25rem; */
 }
 
 .cart {
@@ -19,7 +19,7 @@
   /* cursor: pointer; */
   /* font-family: var(--font-text); */
   font-size: 0.9rem;
-  /* padding: 0.5rem; */
+  padding: 0.5rem;
   text-transform: uppercase;
 }
 

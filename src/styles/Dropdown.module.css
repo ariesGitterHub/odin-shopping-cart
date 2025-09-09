@@ -4,10 +4,11 @@
   color: var(--frog-black);
   font-family: var(--font-text);
   font-size: 0.9rem;
+  padding: 0.5rem;
 }
 
 .dropdownButton {
-  height: fit-content;
+  /* height: fit-content; */
   /* width: fit-content; */
   display: flex;
   align-items: center;
