@@ -19,7 +19,7 @@
 
 .title {
   color: var(--rose-dk);
-  color: orange;
+  color: green;
     /* color: var(--frog-black); */
   font-family: var(--font-title);
 
@@ -62,7 +62,7 @@ npm run :-moz-drag-over
 .imgContainer p {
   color: var(--rose-dk);
   font-family: var(--font-title);
-  font-size: 1.25rem;
+  font-size: 1rem;
     text-align: center;
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
 }

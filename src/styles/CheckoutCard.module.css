@@ -10,7 +10,8 @@
   box-shadow: 5px 5px 100px 5px var(--gold);
   color: var(--frog-black);
   font-family: var(--font-text);
-  padding: 1rem;
+  margin: 0.5rem;
+  padding: 0.5rem;
   text-transform: capitalize;
 }
 
@@ -69,7 +70,8 @@
 }
 
 .rowContainer {
-  width: 100%;
+  /* width: 100%; */
+  width: auto;
   display: flex;
   gap: 0.25rem;
 }
@@ -116,7 +118,7 @@
 }
 
 .priceSavings {
-  font-size: 0.7rem;
+  font-size: 0.8rem;
 }
 
 .quantityContainer,
