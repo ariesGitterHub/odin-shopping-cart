@@ -1,7 +1,7 @@
 .cardContainer {
   height: fit-content;
   /* width: fit-content; */
-   width: var(--width-card);
+   width: calc(var(--width-card) + 1rem);
   /* width: 300px; */
   display: flex;
   flex-direction: column;
@@ -14,7 +14,7 @@
   color: var(--frog-black);
   font-family: var(--font-text);
   /* margin: 0.25rem; */
-  /* padding: 1.5rem; */
+padding: 1rem;
   text-transform: capitalize;
 }
 

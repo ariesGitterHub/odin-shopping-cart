@@ -56,7 +56,8 @@
 .summaryContainer {
 
   height: fit-content;
-  width: var(--width-card);
+  /* width: var(--width-card); */
+     width: calc(var(--width-card) + 1rem);
   /* min-width: 306px; */
     /* width: 300px; */
   background: var(--white);
