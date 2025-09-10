@@ -12,6 +12,7 @@
 }
 
 .cart {
+  height: 2rem;
   /* width: 7.75rem; */
   width: fit-content;
   background-color: var(--frog-dk);

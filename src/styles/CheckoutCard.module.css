@@ -14,7 +14,7 @@
   color: var(--frog-black);
   font-family: var(--font-text);
   /* margin: 0.25rem; */
-padding: 1rem;
+padding: 0.5rem;
   text-transform: capitalize;
 }
 
