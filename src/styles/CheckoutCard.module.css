@@ -1,7 +1,7 @@
 .cardContainer {
   height: fit-content;
   /* width: fit-content; */
-  width: auto;
+   width: var(--width-card);
   /* width: 300px; */
   display: flex;
   flex-direction: column;
@@ -75,7 +75,7 @@
 .rowContainer {
   /* width: 100%; */
   /* width: auto; */
-  width: 20rem;
+  width: var(--width-main);
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -106,7 +106,8 @@
   color: var(--frog-black);
   font-size: 0.9rem;
   object-fit: contain;
-  padding: 0.25rem;
+  padding-top: 0.25rem;
+  padding-bottom: 0.25;
 }
 
 .image {

@@ -1,6 +1,6 @@
 .cardContainer {
   height: fit-content;
-  width: auto;
+  width: var(--width-card);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -92,7 +92,7 @@
 }
 
 .detailsContainer {
-  width: 20rem;
+  width: var(--width-main);
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -103,7 +103,7 @@
 }
 
 .priceContainer {
-  width: 20rem;
+  width: var(--width-main);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -125,7 +125,7 @@
 }
 
 .buttonContainer {
-  width: 20rem;
+  width: var(--width-main);
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -166,7 +166,7 @@
 
 .sizeWarningMessage {
   height: fit-content;
-  width: 20rem;
+  width: var(--width-main);
   display: flex;
   align-items: center;
   justify-content: center;

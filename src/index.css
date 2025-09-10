@@ -20,6 +20,12 @@
 
   --font-size-title-regular: ;
   --font-size-title-grand: ;
+
+  --width-card: 20rem;
+  --width-main: auto;
+  --margin-padding-main: 0.25rem;
+
+
 }
 
 *,

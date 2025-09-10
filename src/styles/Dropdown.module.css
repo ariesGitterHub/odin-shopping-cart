@@ -4,11 +4,11 @@
   color: var(--frog-black);
   font-family: var(--font-text);
   font-size: 1rem;
-  padding: 0.5rem;
+  padding: 0.25rem;
 }
 
 .dropdownButton {
-  /* height: fit-content; */
+  height: fit-content;
   /* width: fit-content; */
   display: flex;
   align-items: center;
@@ -24,7 +24,7 @@
   border-radius: 4px;
   cursor: pointer;
   font-size: 1rem;
-  padding: 0.5rem;
+  padding: 0.25rem;
   text-transform: uppercase;
 }
 
@@ -45,7 +45,7 @@
 
 .dropdownItem {
   cursor: pointer;
-  padding: 0.5rem;
+  padding: 0.25rem;
 }
 
 .dropdownItem:hover {
