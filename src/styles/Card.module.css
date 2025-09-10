@@ -113,8 +113,8 @@
   font-family: var(--font-text);
   font-size: 1.25rem;
   margin: 0.5rem;
-
 }
+
 .priceSavings {
   background-color: var(--gold);
   border: 2px dashed var(--frog-black);

@@ -63,7 +63,7 @@ export default function CheckoutCard({
               >
                 -
               </Button>
-              <span> {quantity} </span>
+              <span>&nbsp;{quantity}&nbsp;</span>
               <Button
                 variant="incrementDecrementButton"
                 onClick={handleIncrement}

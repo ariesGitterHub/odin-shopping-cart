@@ -13,8 +13,8 @@
   box-shadow: 5px 5px 100px 5px var(--gold);
   color: var(--frog-black);
   font-family: var(--font-text);
-  margin: 0.25rem;
-  padding: 0.25rem;
+  /* margin: 0.25rem; */
+  /* padding: 1.5rem; */
   text-transform: capitalize;
 }
 
@@ -80,7 +80,7 @@
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  gap: 0.25rem;
+  gap: 0.125rem;
 }
 
 .colContainer {
@@ -95,7 +95,7 @@
 .imageContainer {
   /* height: fit-content; */
   height: 13.25rem;
-  width: 9rem;
+  width: calc((var(--width-card) - var(--margin-padding-gap-main)) / 2);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -107,7 +107,7 @@
   font-size: 0.9rem;
   object-fit: contain;
   padding-top: 0.25rem;
-  padding-bottom: 0.25;
+  padding-bottom: 0.25rem;
 }
 
 .image {
@@ -132,7 +132,7 @@
 .quantityContainer,
 .priceContainer {
   height: 6.5rem;
-  width: 9rem;
+  width: calc((var(--width-card) - var(--margin-padding-gap-main)) / 2);
   display: flex;
   flex-direction: column;
   align-items: center;
