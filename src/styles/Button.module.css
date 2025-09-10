@@ -12,7 +12,8 @@
 }
 
 .cart {
-  width: 7.75rem;
+  /* width: 7.75rem; */
+  width: fit-content;
   background-color: var(--frog-dk);
   border: 0.125rem solid var(--frog-black);
   border-radius: 4px;

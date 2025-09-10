@@ -183,6 +183,7 @@
   color: var(--rose-dk);
   font-size: 1rem;
   font-weight: 800;
+  text-align: center;
 }
 
 @keyframes fadeInOut {
