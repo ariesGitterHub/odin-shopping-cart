@@ -29,7 +29,7 @@ export default function CheckoutCard({
         </h2>
 
         <p className={styles.availableQuantityInSize}>
-          *only {availableQuantityInSize} remaining in size: {size}
+          *only {availableQuantityInSize} left in size: {size}
         </p>
       </div>
       <div className={styles.rowContainer}>

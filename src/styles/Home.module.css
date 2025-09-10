@@ -4,7 +4,7 @@
   /* position: relative;
   top: 10rem; */
   height: fit-content;
-  width: fit-content;
+  max-width: 650px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -14,13 +14,14 @@
   box-shadow: 5px 5px 100px 5px var(--frog-dk);
   font-family: var(--font-title);
   margin: 1rem;
-  padding: 1rem;
+  /* padding: 1rem; */
 }
 
 .title {
   color: var(--rose-dk);
   /* color: var(--frog-black); */
   font-family: var(--font-title);
+  padding: 1rem;
 }
 
 .title p {
