@@ -19,12 +19,12 @@
 
 .title {
   color: var(--rose-dk);
-  color: red;
+  color: orange;
     /* color: var(--frog-black); */
   font-family: var(--font-title);
 
 }
-
+npm run :-moz-drag-over
 .title p {
   font-size: 1.5rem;
 }

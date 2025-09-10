@@ -14,7 +14,7 @@ export default function Home() {
         <Link to="/shop">
           <img src={imgHome} alt="Woman wearing a green frog onesie at home." />
         </Link>
-        <p>Click above to start shopping!</p>
+        <p>Click the circle above to start shopping!</p>
       </div>
       <br />
       <Footer />

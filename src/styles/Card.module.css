@@ -1,6 +1,7 @@
 .cardContainer {
   height: fit-content;
-  width: fit-content;
+  width: 20rem;
+  /* width: fit-content; */
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
@@ -106,7 +107,7 @@
 
 .detailsContainer {
   height: fit-content;
-  width: 18rem;
+  width: 19rem;
   flex-direction: row;
   font-size: 1rem;
 }
@@ -117,7 +118,7 @@
   /* width: fit-content; */
   /* display: flex; */
   flex-direction: column;
-  gap: 0.25rem;
+  gap: 0.125rem;
   /* flex-wrap: wrap;
   align-items: center;
   justify-content: center; */
@@ -125,15 +126,19 @@
   background-color: var(--white); */
   color: var(--frog-black);
   font-family: var(--font-text);
-  font-size: 1.125rem;
+  font-size: 1.25rem;
+  margin: 0.5rem;
   /* padding: 0.25rem; */
 }
 
 .buttonContainer {
-  width: 100%;
-    flex-direction: row;
-
-      font-size: 1.125rem;
+  /* width: fit-content; */
+  width: auto;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem;
+  /* font-size: 1.125rem; */
 }
 
 .priceSavings {
@@ -177,7 +182,9 @@
 }
 
 .sizeWarningMessage {
-  width: 100%;
+  width: 95%;
+  /* max-width: 20rem; */
+  /* width: fit-content; */
   display: inline-block;
   animation: fadeInOut 3s ease-in-out forwards;
   background-color: var(--gold-lt);
@@ -185,8 +192,8 @@
   border-radius: 4px;
   color: var(--rose-dk);
   font-weight: 800;
-  margin-top: 0.25rem;
-  padding: 6px 10px;
+  margin: 0.25rem;
+  padding: 0.25rem;
   text-align: center;
 }
 
