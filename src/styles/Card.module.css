@@ -1,6 +1,6 @@
 .cardContainer {
   height: fit-content;
-  width: 22rem;
+  width: auto;
   /* width: fit-content; */
   display: flex;
   flex-wrap: wrap;
@@ -12,8 +12,8 @@
   border-radius: 1rem;
   box-shadow: 5px 5px 100px 5px var(--frog-dk);
   font-family: var(--font-text);
-  margin: 0.5rem;
-  padding: 0.5rem;
+  margin: 0.25rem;
+  padding: 0.25rem;
 }
 
 .cardContainer h1 {
