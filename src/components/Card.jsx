@@ -173,41 +173,38 @@ export default function Card({
           <p>({numberReviews} Reviews)</p>
         </div>
       </div>
-              <div className={styles.priceContainer}>
-          <div key={id}>
-            <ProductPrice
-              price={price}
-              stockNumber={stockNumber}
-              rating={rating}
-              numberReviews={numberReviews}
-              finalPrice={finalPrice}
+      <div className={styles.priceContainer}>
+        <div key={id}>
+          <ProductPrice
+            price={price}
+            stockNumber={stockNumber}
+            rating={rating}
+            numberReviews={numberReviews}
+            finalPrice={finalPrice}
+          />
+        </div>
+        {discountPercent > 0 && (
+          <p className={styles.priceSavings}>Save {discountPercent}%</p>
+        )}
+      </div>
+      <div className={styles.buttonContainer}>
+        {availableSizes.length > 0 && (
+          <>
+            <Dropdown
+              label="Size"
+              options={availableSizes}
+              onSelect={handleSizeSelect}
             />
-          </div>
-          {discountPercent > 0 && (
-            <p className={styles.priceSavings}>Save {discountPercent}%</p>
-          )}
-        </div>
-        <div className={styles.buttonContainer}>
-          {availableSizes.length > 0 && (
-            <>
-              <Dropdown
-                label="Size"
-                options={availableSizes}
-                onSelect={handleSizeSelect}
-              />
-              <Button variant="cart" onClick={handleClick}>
-                Add to Cart
-              </Button>
-     
+            <Button variant="cart" onClick={handleClick}>
+              Add to Cart
+            </Button>
 
-              {showSizeWarning && (
-                <div className={styles.sizeWarningMessage}>
-                  {sizeWarningText}
-                </div>
-              )}
-            </>
-          )}
-        </div>
+            {showSizeWarning && (
+              <div className={styles.sizeWarningMessage}>{sizeWarningText}</div>
+            )}
+          </>
+        )}
+      </div>
     </div>
   );
 }

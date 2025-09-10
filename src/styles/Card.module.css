@@ -6,7 +6,7 @@
   flex-wrap: wrap;
   flex-direction: column;
   align-items: center;
-  justify-content: start;
+  justify-content: center;
   /* gap: 0.25rem; */
   background-color: var(--white);
   border-radius: 1rem;
@@ -134,7 +134,8 @@
 
 .buttonContainer {
   /* width: fit-content; */
-  width: auto;
+  /* width: auto; */
+  width: 18rem;
   flex-direction: row;
   align-items: center;
   justify-content: center;
@@ -146,8 +147,9 @@
   background-color: var(--gold);
   border: 2px dashed var(--frog-black);
   border-radius: 4px;
+  font-size: 1rem;
   font-style: italic;
-  padding: 0.25rem;
+  padding: 0.35rem;
 }
 
 .stockNumber,
@@ -183,9 +185,10 @@
 }
 
 .sizeWarningMessage {
-  width: 95%;
+  /* width: 95%; */
   /* max-width: 20rem; */
-  /* width: fit-content; */
+  width: fit-content;
+  width: auto;
   display: inline-block;
   animation: fadeInOut 3s ease-in-out forwards;
   background-color: var(--gold-lt);
