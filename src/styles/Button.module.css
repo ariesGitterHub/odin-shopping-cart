@@ -12,6 +12,7 @@
 }
 
 .cart {
+  width: 7.75rem;
   background-color: var(--frog-dk);
   border: 0.125rem solid var(--frog-black);
   border-radius: 4px;
@@ -62,9 +63,10 @@
 }
 
 .removeCartItem {
-  display: block;
+  /* display: block; */
   /* width: 100%; */
-  width: auto;
+  /* width: auto; */
+    width: 18.5rem;
   background-color: var(--frog-black);
   border: 4px solid var(--gold-lt);
   border-radius: 0.5rem;

@@ -56,7 +56,7 @@
 .summaryContainer {
 
   height: fit-content;
-  width: auto;
+  width: 320px;
   min-width: 306px;
     /* width: 300px; */
   background: var(--white);

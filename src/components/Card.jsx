@@ -200,7 +200,8 @@ export default function Card({
             </Button>
 
             {showSizeWarning && (
-              <div className={styles.sizeWarningMessage}>{sizeWarningText}</div>
+              <div className={styles.sizeWarningMessage}>
+                <p>{sizeWarningText}</p></div>
             )}
           </>
         )}

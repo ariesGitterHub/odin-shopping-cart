@@ -2,14 +2,16 @@
   height: fit-content;
   width: auto;
   display: flex;
+  flex-wrap: wrap;
   flex-direction: column;
   align-items: center;
-  justify-content: center; 
+  justify-content: center;
   background-color: var(--white);
   border-radius: 1rem;
   box-shadow: 5px 5px 100px 5px var(--frog-dk);
   font-family: var(--font-text);
-  padding: 0.25rem; 
+  margin: 0.25rem;
+  padding: 0.25rem;
 }
 
 .cardContainer h1 {
@@ -87,34 +89,40 @@
 .detailsContainer,
 .priceContainer,
 .buttonContainer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
   background-color: var(--white);
   font-family: var(--font-text);
 }
 
 .detailsContainer {
-  width: 20rem;
-  display: flex;
+  height: fit-content;
+  width: 19rem;
   flex-direction: row;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
   font-size: 1rem;
 }
 
 .priceContainer {
-  width: 20rem;
-  display: flex;
+  height: fit-content;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
+  gap: 0.125rem;
   color: var(--frog-black);
   font-family: var(--font-text);
   font-size: 1.25rem;
   margin: 0.5rem;
-
 }
+
+.buttonContainer {
+  width: 18rem;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem;
+}
+
 .priceSavings {
   background-color: var(--gold);
   border: 2px dashed var(--frog-black);
@@ -122,15 +130,6 @@
   font-size: 1rem;
   font-style: italic;
   padding: 0.35rem;
-}
-
-.buttonContainer {
-  width: 20rem;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
 }
 
 .stockNumber,
@@ -161,28 +160,23 @@
   border-radius: 50%;
   font-size: 0.8rem;
   font-weight: bold;
+  padding: 0.125rem 0.25rem;
   text-transform: uppercase;
 }
 
 .sizeWarningMessage {
-  height: fit-content;
-  width: 20rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  width: fit-content;
+  width: auto;
+  display: inline-block;
   animation: fadeInOut 3s ease-in-out forwards;
   background-color: var(--gold-lt);
   border: 4px solid var(--rose-dk);
   border-radius: 4px;
-
-  margin: 0.5rem;
-  padding: 0.5rem;
-}
-
-.sizeWarningMessage p {
   color: var(--rose-dk);
-  font-size: 1rem;
   font-weight: 800;
+  margin: 0.25rem;
+  padding: 0.25rem;
+  text-align: center;
 }
 
 @keyframes fadeInOut {
