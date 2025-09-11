@@ -58,11 +58,14 @@
 
 .imgContainer {
   display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
 }
 
 .imgFront {
   height: 10rem;
-  width: 10rem;
+  width: auto;
   background-color: white;
   cursor: pointer;
   object-fit: contain;

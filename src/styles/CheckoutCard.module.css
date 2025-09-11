@@ -40,7 +40,6 @@ padding: 0.5rem;
   font-family: var(--font-text);
   font-style: italic;
   text-transform: lowercase;
-  /* margin-top: 0.125rem; */
 }
 
 .dinojama,
@@ -84,7 +83,7 @@ padding: 0.5rem;
 }
 
 .colContainer {
-  width: fit-content;
+  width: var(--width-main);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -94,7 +93,7 @@ padding: 0.5rem;
 
 .imageContainer {
   /* height: fit-content; */
-  height: 13.25rem;
+  height: 14.25rem;
   width: calc((var(--width-card) - var(--margin-padding-gap-main)) / 2);
   display: flex;
   flex-direction: column;
@@ -111,8 +110,9 @@ padding: 0.5rem;
 }
 
 .image {
-  height: 9rem;
+  height: 11rem;
   width: auto;
+    object-fit: contain;
 }
 
 .sizeUppercase {
@@ -131,7 +131,7 @@ padding: 0.5rem;
 
 .quantityContainer,
 .priceContainer {
-  height: 6.5rem;
+  height: 7rem;
   width: calc((var(--width-card) - var(--margin-padding-gap-main)) / 2);
   display: flex;
   flex-direction: column;
