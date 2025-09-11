@@ -1,20 +1,18 @@
 .cardContainer {
   height: fit-content;
-  /* width: fit-content; */
-   width: calc(var(--width-card) + 1rem);
-  /* width: 300px; */
+  width: calc(var(--width-card) + 1rem);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 0.25rem;
   background-color: var(--gold-lt);
+    /* background: linear-gradient(0deg, var(--gold-lt), var(--gold)); */
   border-radius: 1rem;
   box-shadow: 5px 5px 100px 5px var(--gold);
   color: var(--frog-black);
   font-family: var(--font-text);
-  /* margin: 0.25rem; */
-padding: 0.5rem;
+  padding: 0.5rem;
   text-transform: capitalize;
 }
 
@@ -72,14 +70,13 @@ padding: 0.5rem;
 }
 
 .rowContainer {
-  /* width: 100%; */
-  /* width: auto; */
   width: var(--width-main);
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  gap: 0.125rem;
+  gap: 0.5rem;
+        /* border: 4px solid var(--white); */
 }
 
 .colContainer {
@@ -87,12 +84,14 @@ padding: 0.5rem;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.25rem;
+  gap: 0.5rem;
   justify-content: space-between;
+    /* background: linear-gradient(0deg, var(--rose-lt), var(--gold));  */
+      /* border: 4px solid var(--white); */
+  border-radius: 0.5rem;
 }
 
 .imageContainer {
-  /* height: fit-content; */
   height: 14.25rem;
   width: calc((var(--width-card) - var(--margin-padding-gap-main)) / 2);
   display: flex;
@@ -100,7 +99,9 @@ padding: 0.5rem;
   align-items: center;
   justify-content: space-around;
   background-color: var(--white);
-  border: 4px solid var(--gold-lt);
+  /* border: 4px solid var(--gold-lt); */
+        border: 4px solid var(--white);
+  
   border-radius: 0.5rem;
   color: var(--frog-black);
   font-size: 0.9rem;
@@ -112,7 +113,7 @@ padding: 0.5rem;
 .image {
   height: 11rem;
   width: auto;
-    object-fit: contain;
+  object-fit: contain;
 }
 
 .sizeUppercase {
@@ -137,9 +138,9 @@ padding: 0.5rem;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 0.125rem;
+  /* gap: 0.125rem; */
   border-radius: 0.5rem;
-  border: 4px solid var(--gold-lt);
+        border: 4px solid var(--white);
   font-size: 1rem;
   font-weight: 800;
   padding: 0.25rem;
@@ -147,16 +148,20 @@ padding: 0.5rem;
 }
 
 .quantityContainer {
-  background-color: var(--rose-lt);
+  /* background-color: var(--rose-lt); */
+  /* background-color: var(--gold-lt); */
+  background: linear-gradient(0deg, var(--rose-lt), var(--gold-lt));
+  /* border-radius: 0.5rem; */
 }
 
 .priceContainer {
-  background-color: var(--frog-lt);
+  /* background-color: var(--frog-lt); */
+  /* background-color: var(--rose-lt); */
+    background: linear-gradient(0deg, var(--frog-lt), var(--gold-lt));
 }
 
 .quantityControl {
   height: fit-content;
-  /* width: 6rem; */
   width: fit-content;
   display: flex;
   flex-direction: row;

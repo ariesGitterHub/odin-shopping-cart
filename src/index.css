@@ -24,8 +24,7 @@
   --width-card: 90vw;
   --width-main: auto;
   --margin-padding-gap-main: 0.25rem;
-
-
+  --image-circles-main: 15rem;
 }
 
 *,
@@ -72,4 +71,22 @@ body {
 
 li {
   list-style: none;
+}
+
+@media (min-width: 420px) {
+  :root {
+    --width-card: 20rem;  
+  }
+
+
+@media (min-width: 500px) {
+  :root {
+    --image-circles-main: 20rem;  
+  }
+}}
+
+@media (min-width: 600px) {
+  :root {
+    --image-circles-main: 25rem;  
+  }
 }

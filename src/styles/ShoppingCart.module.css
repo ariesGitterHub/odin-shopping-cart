@@ -48,25 +48,17 @@
   flex-wrap: wrap;
   gap: 1rem;
   background-color: var(--white);
-  /* border-radius: 1rem; */
   margin: 1rem;
   padding: 1rem;
 }
 
 .summaryContainer {
-
   height: fit-content;
-  /* width: var(--width-card); */
-     width: calc(var(--width-card) + 1rem);
-  /* min-width: 306px; */
-    /* width: 300px; */
+  width: calc(var(--width-card) + 1rem);
   background: var(--white);
+  border-radius: 0.5rem;
   color: var(--frog-black);
   padding: 1rem;
-  border-radius: 0.5rem;
-  /* max-width: 400px; */
-  /* margin: 2rem auto; */
-  /* margin: 1rem; */
 }
 
 .summaryLine,

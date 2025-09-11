@@ -1,8 +1,4 @@
 .mainContainer {
-  /* max-height: 650px;
-  max-width: 650px; */
-  /* position: relative;
-  top: 10rem; */
   height: fit-content;
   max-width: 650px;
   display: flex;
@@ -14,14 +10,11 @@
   box-shadow: 5px 5px 100px 5px var(--frog-dk);
   font-family: var(--font-title);
   margin: 1rem;
-  /* padding: 1rem; */
 }
 
 .title {
   color: var(--rose-dk);
-  /* color: var(--frog-black); */
   font-family: var(--font-title);
-  /* padding: 1rem; */
   margin: 1rem;
 }
 
@@ -30,7 +23,6 @@
 }
 
 .title h1 {
-  /* font-size: 2.75rem; */
   font-size: 3rem;
   text-align: center;
 }
@@ -45,10 +37,8 @@
 }
 
 .imgContainer img {
-  height: 15rem;
-  width: 15rem;
-  /* height: 20rem;
-  width: 20rem; */
+  height: var(--image-circles-main);
+  width: var(--image-circles-main);
   border-radius: 50%;
   box-shadow: 5px 5px 100px 5px var(--frog-white);
   margin: 1rem;

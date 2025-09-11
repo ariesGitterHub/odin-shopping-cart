@@ -43,8 +43,8 @@
 }
 
 .imageContainer img {
-  height: 15rem;
-  width: 15rem;
+  height: var(--image-circles-main);
+  width: var(--image-circles-main);
   border-radius: 50%;
   object-fit: contain;
 }

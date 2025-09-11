@@ -10,7 +10,7 @@
   background: linear-gradient(0deg, var(--frog-white), var(--gold-lt));
   border-radius: 1rem;
   box-shadow: 5px 5px 100px 5px var(--frog-dk);
-   margin: 1rem;
+  margin: 1rem;
   padding: 1rem;
 }
 
@@ -45,8 +45,8 @@
 }
 
 .imgContainer img {
-  height: 15rem;
-  width: 15rem;
+  height: var(--image-circles-main);
+  width: var(--image-circles-main);
   border-radius: 50%;
   object-fit: cover;
 }
