@@ -69,7 +69,6 @@
 .removeCartItem:hover,
 .incrementDecrementButton:hover {
   background-color: var(--rose-dk);
-  color: var(--frog-black);
 }
 
 .paypalButton:hover,
