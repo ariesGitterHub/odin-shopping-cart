@@ -8,7 +8,7 @@
   background: linear-gradient(0deg, var(--frog-white), var(--frog-lt));
   border-radius: 1rem;
   box-shadow: 5px 5px 100px 5px var(--frog-dk);
-  font-family: var(--font-title);
+  font-family: var(--font-text);
   margin: 1rem;
 }
 

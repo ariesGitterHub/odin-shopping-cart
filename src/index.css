@@ -20,7 +20,7 @@
 
   --navbar-image-size: 3rem;
   --navbar-font-size: 1rem;
-  --navbar-cart-num-circle-size: 1.5rem;
+  --navbar-cart-num-circle-size: 1.75rem;
   --navbar-search-width: 35ch;
   --width-card: 90vw;
   --width-main: auto;
@@ -91,7 +91,7 @@ li {
       --navbar-image-size: 3.5rem;
   --navbar-font-size: 1.25rem;
   --navbar-search-width: 40ch;
-    --navbar-cart-num-circle-size: 1.85rem;
+    --navbar-cart-num-circle-size: 2rem;
     --image-circles-main: 25rem;  
   }
 }
