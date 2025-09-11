@@ -3,7 +3,6 @@
   top: 0;
   height: fit-content;
   width: 100%;
-  /* min-width: 100%; */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -21,7 +20,7 @@
   justify-content: center;
   gap: 1rem;
   font-family: var(--font-text);
-  font-size: 1rem;
+  font-size: var(--navbar-font-size);
 }
 
 .navbar a:link {
@@ -42,7 +41,7 @@
 }
 
 .navbar img {
-  height: 3rem;
+  height: var(--navbar-image-size);
   width: auto;
   display: flex;
   align-items: center;
@@ -64,7 +63,7 @@
 
 .search {
   height: 2rem;
-  width: 35ch;
+  width: var(--navbar-search-width);
   border-radius: 0.5rem;
   font-family: var(--font-text);
 }
@@ -80,8 +79,8 @@
   position: absolute; /* Position it on top of the cart icon */
   top: -5px; /* Adjust based on the icon size */
   right: -5px; /* Adjust based on the icon size */
-  height: 1.5rem;
-  width: 1.5rem;
+  height: var(--navbar-cart-num-circle-size);
+  width: var(--navbar-cart-num-circle-size);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -89,7 +88,7 @@
   border-radius: 50%;
   color: var(--frog-black);
   font-family: var(--font-text);
-  font-size: 1rem;
+  font-size: var(--navbar-font-size);
   font-weight: 600;
   opacity: 0.95;
   padding: 0.25rem;

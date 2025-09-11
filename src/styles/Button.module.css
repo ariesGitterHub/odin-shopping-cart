@@ -58,7 +58,7 @@
 .removeCartItem {
   width: var(--width-card);
   background-color: var(--frog-black);
-  border: 4px solid var(--gold-lt);
+  border: 0.125rem  solid var(--frog-black);
   border-radius: 0.5rem;
   color: var(--gold-lt);
   font-weight: 800;
