@@ -89,7 +89,7 @@
 
 .imageContainer {
   height: 14.5rem;
-  width: calc((var(--width-card) - var(--margin-padding-gap-main)) / 2);
+  width: calc((var(--width-card) - 0.25rem) / 2);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -127,7 +127,7 @@
 .quantityContainer,
 .priceContainer {
   height: 7rem;
-  width: calc((var(--width-card) - var(--margin-padding-gap-main)) / 2);
+  width: calc((var(--width-card) - 0.25rem) / 2);
   display: flex;
   flex-direction: column;
   align-items: center;

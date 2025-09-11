@@ -24,7 +24,6 @@
   --navbar-search-width: 35ch;
   --width-card: 90vw;
   --width-main: auto;
-  --margin-padding-gap-main: 0.25rem;
   --image-circles-main: 15rem;
 }
 
@@ -76,22 +75,22 @@ li {
 
 @media (min-width: 420px) {
   :root {
-    --width-card: 20rem;  
+    --width-card: 20rem;
   }
-
+}
 
 @media (min-width: 500px) {
   :root {
-    --image-circles-main: 20rem;  
+    --image-circles-main: 20rem;
   }
-}}
+}
 
 @media (min-width: 600px) {
   :root {
-      --navbar-image-size: 3.5rem;
-  --navbar-font-size: 1.25rem;
-  --navbar-search-width: 40ch;
+    --navbar-image-size: 3.5rem;
+    --navbar-font-size: 1.25rem;
+    --navbar-search-width: 40ch;
     --navbar-cart-num-circle-size: 2rem;
-    --image-circles-main: 25rem;  
+    --image-circles-main: 25rem;
   }
 }
