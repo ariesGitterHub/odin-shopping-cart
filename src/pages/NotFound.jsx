@@ -10,7 +10,10 @@ export default function NotFound() {
           <h1>404 Page Not Found</h1>
           <p>
             Sorry, this page doesn't exist, but hey, it happens to the best of
-            us. <span>Go back to <Link to="/">Home</Link>.</span>
+            us.{" "}
+            <span>
+              Go back to <Link to="/">Home</Link>.
+            </span>
           </p>
         </div>
         <div className={styles.imageContainer}>

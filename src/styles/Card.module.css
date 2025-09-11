@@ -4,12 +4,12 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center; 
+  justify-content: center;
   background-color: var(--white);
   border-radius: 1rem;
   box-shadow: 5px 5px 100px 5px var(--frog-dk);
   font-family: var(--font-text);
-  padding: 0.5rem 0.25rem; 
+  padding: 0.5rem 0.25rem;
 }
 
 .cardContainer h1 {
@@ -177,7 +177,6 @@
   background-color: var(--gold-lt);
   border: 4px solid var(--rose-dk);
   border-radius: 4px;
-
   margin: 0.5rem;
   padding: 0.5rem;
 }

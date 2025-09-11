@@ -1,8 +1,7 @@
-import { render, screen } from "@testing-library/react";
-import userEvent from "@testing-library/user-event";
-import { act } from "react-dom/test-utils";
-import { CartProvider, CartContext } from "../src/context/CartContext";
 import { useContext } from "react";
+import { render, screen, waitFor } from "@testing-library/react";
+import userEvent from "@testing-library/user-event";
+import { CartContext, CartProvider } from "../src/context/CartContext"; // Import CartProvider directly
 
 function TestComponent() {
   const { cartItems, handleAddToCart, handleRemoveCartItem } =
@@ -49,7 +48,7 @@ function TestComponent() {
 }
 
 describe("CartContext", () => {
-  it("adds an item to the cart", () => {
+  it("adds an item to the cart", async () => {
     render(
       <CartProvider>
         <TestComponent />
@@ -62,15 +61,14 @@ describe("CartContext", () => {
 
     expect(cartCount.textContent).toBe("0");
 
-    act(() => {
-      userEvent.click(addButton);
-    });
+    userEvent.click(addButton);
 
-    expect(cartCount.textContent).toBe("1");
+    // Wait for the cart count and quantity to be updated
+    await waitFor(() => expect(cartCount.textContent).toBe("1"));
     expect(cartQuantity.textContent).toBe("1");
   });
 
-  it("increments quantity if same SKU is added", () => {
+  it("increments quantity if same SKU is added", async () => {
     render(
       <CartProvider>
         <TestComponent />
@@ -80,16 +78,13 @@ describe("CartContext", () => {
     const addButton = screen.getByText("Add Item");
     const cartQuantity = screen.getByTestId("cart-quantity");
 
-    act(() => {
-      userEvent.click(addButton);
-      userEvent.click(addButton);
-    });
+    userEvent.click(addButton);
+    userEvent.click(addButton);
 
-    // Quantity should increase to 2
-    expect(cartQuantity.textContent).toBe("2");
+    await waitFor(() => expect(cartQuantity.textContent).toBe("2"));
   });
 
-  it("does not exceed available quantity", () => {
+  it("does not exceed available quantity", async () => {
     render(
       <CartProvider>
         <TestComponent />
@@ -99,17 +94,14 @@ describe("CartContext", () => {
     const addButton = screen.getByText("Add Item");
     const cartQuantity = screen.getByTestId("cart-quantity");
 
-    // Max quantity is 2 as per handleAddToCart params (selectedSizeQuantity: 2)
-    act(() => {
-      userEvent.click(addButton);
-      userEvent.click(addButton);
-      userEvent.click(addButton); // This one should not increase quantity
-    });
+    userEvent.click(addButton); // Adds 1 item
+    userEvent.click(addButton); // Adds another item, now quantity = 2
+    userEvent.click(addButton); // Should not add more because max quantity is 2
 
-    expect(cartQuantity.textContent).toBe("2");
+    await waitFor(() => expect(cartQuantity.textContent).toBe("2"));
   });
 
-  it("removes item from cart", () => {
+  it("removes item from cart", async () => {
     render(
       <CartProvider>
         <TestComponent />
@@ -120,16 +112,12 @@ describe("CartContext", () => {
     const removeButton = screen.getByText("Remove Item");
     const cartCount = screen.getByTestId("cart-count");
 
-    act(() => {
-      userEvent.click(addButton);
-    });
+    userEvent.click(addButton);
 
-    expect(cartCount.textContent).toBe("1");
+    await waitFor(() => expect(cartCount.textContent).toBe("1"));
 
-    act(() => {
-      userEvent.click(removeButton);
-    });
+    userEvent.click(removeButton);
 
-    expect(cartCount.textContent).toBe("0");
+    await waitFor(() => expect(cartCount.textContent).toBe("0"));
   });
 });

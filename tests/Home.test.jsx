@@ -1,4 +1,3 @@
-// tests/Home.test.jsx
 import { render, screen } from "@testing-library/react";
 import { MemoryRouter } from "react-router-dom";
 import Home from "../src/pages/Home";
@@ -25,8 +24,11 @@ describe("Home page", () => {
     expect(link).toHaveAttribute("href", "/shop");
     expect(link).toContainElement(img);
 
-    expect(
-      screen.getByText(/click above to start shopping!/i)
-    ).toBeInTheDocument();
+expect(
+  screen.getByText(
+    /click\s+above\s+to\s+start\s+shopping\s+for\s+your\s+new\s+adult\s+animal-themed\s+unisex\s+onesie!/i
+  )
+).toBeInTheDocument();
+
   });
 });

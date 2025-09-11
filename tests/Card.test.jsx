@@ -45,7 +45,7 @@ test("renders product info and images", () => {
   expect(screen.getByText("M")).toBeInTheDocument();
 });
 
-test("shows warning if add to cart clicked without size selected", () => {
+test("shows warning if add to cart clicked without size selected", async () => {
   render(
     <Card
       id="1"
@@ -65,19 +65,29 @@ test("shows warning if add to cart clicked without size selected", () => {
     />
   );
 
+  // Find and click the add to cart button
   const addButton = screen.getByRole("button", { name: /add to cart/i });
   fireEvent.click(addButton);
 
+  // Check that the warning <div> with the message appears
   expect(screen.getByText("Please select a size.")).toBeInTheDocument();
 
-  // Optional: test that warning disappears after 3 seconds using fake timers
-  vi.useFakeTimers();
+  // Ensure that the warning is inside the <div>
+  const warningDiv = screen.getByText("Please select a size.").closest("div");
+  //expect(warningDiv).toHaveClass(styles.sizeWarningMessage); // Ensure the div has the correct class
+
+  // Advance timers by 3 seconds to make the warning disappear
+  vi.useFakeTimers(); // Use fake timers
   act(() => {
     vi.advanceTimersByTime(3000);
   });
+
+  // After 3 seconds, the warning should no longer be in the document
   expect(screen.queryByText("Please select a size.")).not.toBeInTheDocument();
-  vi.useRealTimers();
+
+  vi.useRealTimers(); // Restore real timers
 });
+
 
 test("calls handleAddToCart with correct item after selecting size and clicking add", () => {
   render(

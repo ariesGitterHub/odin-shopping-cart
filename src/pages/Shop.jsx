@@ -9,10 +9,7 @@ import imgSizesSpanko from "../assets/imgSizesSpanko.JPG";
 import imgSizes from "../assets/imgSizes.JPG";
 
 export default function Shop() {
-
-  const {
-    filteredProducts, 
-   } = useOutletContext();
+  const { filteredProducts } = useOutletContext();
 
   return (
     <div className={styles.mainContainer}>
@@ -30,14 +27,14 @@ export default function Shop() {
                 card.brand === "dinojama"
                   ? imgSizesDinojama
                   : card.brand === "jammy mart"
-                  ? imgSizesJammyMart
-                  : card.brand === "mooshi-doo"
-                  ? imgSizesMooshiDoo
-                  : card.brand === "plushies"
-                  ? imgSizesPlushies
-                  : card.brand === "spanko"
-                  ? imgSizesSpanko
-                  : imgSizes
+                    ? imgSizesJammyMart
+                    : card.brand === "mooshi-doo"
+                      ? imgSizesMooshiDoo
+                      : card.brand === "plushies"
+                        ? imgSizesPlushies
+                        : card.brand === "spanko"
+                          ? imgSizesSpanko
+                          : imgSizes
               }
               brand={card.brand}
               stock={card.stock}

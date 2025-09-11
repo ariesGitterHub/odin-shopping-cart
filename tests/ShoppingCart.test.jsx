@@ -1,4 +1,3 @@
-// tests/ShoppingCart.test.jsx
 import { render, screen, fireEvent } from "@testing-library/react";
 import ShoppingCart from "../src/pages/ShoppingCart";
 import { useCart } from "../src/context/useCart";

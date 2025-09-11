@@ -1,25 +1,23 @@
-// router.test.jsx
 import { render, screen } from "@testing-library/react";
-import { RouterProvider } from "react-router-dom";
-import { router } from "./router";
+import { RouterProvider } from "react-router-dom"; // Use RouterProvider to render the router
+import { router } from "../src/router"; // Import the router setup
 
 describe("App Routing", () => {
   test("renders Home component on default route", () => {
-    window.history.pushState({}, "Home", "/");
+    window.history.pushState({}, "Home", "/"); // Simulate visiting the Home route
 
-    render(<RouterProvider router={router} />);
+    render(<RouterProvider router={router} />); // Render the router in the test
 
-    // Replace this with something unique to your Home page
-    expect(screen.getByText(/welcome to home/i)).toBeInTheDocument();
+    expect(screen.getByText(/Welcome to the Application/i)).toBeInTheDocument();
+    expect(screen.getByText(/Welcome to our store!/i)).toBeInTheDocument(); // Make sure this matches your Home page text
   });
 
   test("renders Shop component on /shop route", () => {
-    window.history.pushState({}, "Shop", "/shop");
+    window.history.pushState({}, "Shop", "/shop"); // Simulate visiting the Shop route
 
-    render(<RouterProvider router={router} />);
+    render(<RouterProvider router={router} />); // Render the router
 
-    // Replace with something unique to your Shop page
-    expect(screen.getByText(/shop/i)).toBeInTheDocument();
+    expect(screen.getByText(/shop/i)).toBeInTheDocument(); // Check for Shop page text
   });
 
   test("renders About component on /about route", () => {
@@ -27,8 +25,7 @@ describe("App Routing", () => {
 
     render(<RouterProvider router={router} />);
 
-    // Replace with something unique to your About page
-    expect(screen.getByText(/about us/i)).toBeInTheDocument();
+    expect(screen.getByText(/about us/i)).toBeInTheDocument(); // Check for About page text
   });
 
   test("renders Contact component on /contact route", () => {
@@ -36,8 +33,7 @@ describe("App Routing", () => {
 
     render(<RouterProvider router={router} />);
 
-    // Replace with something unique to your Contact page
-    expect(screen.getByText(/contact/i)).toBeInTheDocument();
+    expect(screen.getByText(/contact us/i)).toBeInTheDocument(); // Check for Contact page text
   });
 
   test("renders ShoppingCart component on /shopping-cart route", () => {
@@ -45,8 +41,7 @@ describe("App Routing", () => {
 
     render(<RouterProvider router={router} />);
 
-    // Replace with something unique to your ShoppingCart page
-    expect(screen.getByText(/shopping cart/i)).toBeInTheDocument();
+    expect(screen.getByText(/shopping cart/i)).toBeInTheDocument(); // Check for ShoppingCart page text
   });
 
   test("renders NotFound component on unknown route", () => {
@@ -54,7 +49,6 @@ describe("App Routing", () => {
 
     render(<RouterProvider router={router} />);
 
-    // Replace with something unique to your NotFound page, e.g., "404" or "Page not found"
-    expect(screen.getByText(/404/i)).toBeInTheDocument();
+    expect(screen.getByText(/404/i)).toBeInTheDocument(); // Check for NotFound page text
   });
 });

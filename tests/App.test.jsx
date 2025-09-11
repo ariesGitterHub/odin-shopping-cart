@@ -1,71 +1,148 @@
-import { render, screen, waitFor } from "@testing-library/react";
-import { vi } from "vitest";
-import userEvent from "@testing-library/user-event";
-import App from "../App";
-import * as api from "../api/api";
+import { render, screen, fireEvent, waitFor } from "@testing-library/react";
+import { RouterProvider } from "react-router-dom";
+import { createMemoryRouter } from "react-router-dom";
+import App from "../src/App"; // Assuming App.jsx is in the src directory
 
-// Mock fetchInventory
-vi.mock("../api/api");
+// Mocking API call
+vi.mock("../src/api/api", () => ({
+  fetchInventory: vi.fn(() =>
+    Promise.resolve([
+      {
+        id: 1,
+        animalType: "Frog",
+        tags: ["cute", "green"],
+        stock: [
+          { sku: "frog001", size: "M", quantity: 10 },
+          { sku: "frog002", size: "L", quantity: 5 },
+        ],
+      },
+      {
+        id: 2,
+        animalType: "Cat",
+        tags: ["cute", "fluffy"],
+        stock: [
+          { sku: "cat001", size: "M", quantity: 20 },
+          { sku: "cat002", size: "L", quantity: 8 },
+        ],
+      },
+    ])
+  ),
+}));
 
-const mockInventory = [
-  {
-    id: 1,
-    animalType: "lion",
-    tags: ["big cat"],
-    stock: [
-      { size: "S", quantity: 5, sku: "sku1" },
-      { size: "M", quantity: 0, sku: "sku2" }, // zero quantity
-    ],
-    // other product fields...
-  },
-  {
-    id: 2,
-    animalType: "feline",
-    tags: ["cat", "pet"],
-    stock: [{ size: "L", quantity: 3, sku: "sku3" }],
-  },
-];
+describe("App Component", () => {
+  test("displays loading message while inventory is being fetched", () => {
+    render(<App />); // Render the app
 
-describe("App", () => {
-  beforeEach(() => {
-    api.fetchInventory.mockResolvedValue(mockInventory);
-  });
-
-  test("shows loading initially and then loads products", async () => {
-    render(<App />);
-
+    // Check if the loading message is rendered before data is fetched
     expect(screen.getByText(/loading/i)).toBeInTheDocument();
-
-    // Wait for inventory to be loaded and loading to disappear
-    await waitFor(() =>
-      expect(screen.queryByText(/loading/i)).not.toBeInTheDocument()
-    );
   });
 
-  test("passes filtered products to Outlet context", async () => {
-    render(<App />);
+  test("renders Navbar and search functionality", async () => {
+    // Mock the inventory data and ensure it's returned when fetchInventory is called
+    require("../src/api/api").fetchInventory.mockResolvedValue([
+      {
+        id: 1,
+        animalType: "Frog",
+        tags: ["cute", "green"],
+        stock: [
+          { sku: "frog001", size: "M", quantity: 10 },
+          { sku: "frog002", size: "L", quantity: 5 },
+        ],
+      },
+    ]);
 
+    render(<App />); // Render the app
+
+    // Wait for loading to finish and check if the Navbar is rendered
     await waitFor(() =>
-      expect(screen.queryByText(/loading/i)).not.toBeInTheDocument()
+      expect(screen.getByAltText("Cute frog head icon.")).toBeInTheDocument()
     );
 
-    // Since Outlet is a react-router component, you can spy on it or mock it.
-    // Here we just check Navbar is rendered with onSearch prop
-    expect(screen.getByRole("navigation")).toBeInTheDocument();
+    // Ensure the search input is visible
+    const searchInput = screen.getByPlaceholderText(/search/i);
+    expect(searchInput).toBeInTheDocument();
+
+    // Simulate search in Navbar and check if the correct filtered product is shown
+    fireEvent.change(searchInput, {
+      target: { value: "frog" },
+    });
+
+    // Wait for the filtered product to appear
+    await waitFor(() => expect(screen.getByText(/frog/i)).toBeInTheDocument());
   });
 
-  test("filters products based on search query", async () => {
+  test("routes to the correct page", async () => {
+    const router = createMemoryRouter([
+      {
+        path: "/",
+        element: <App />,
+        children: [
+          { index: true, element: <div>Home Page</div> },
+          { path: "shop", element: <div>Shop Page</div> },
+          { path: "about", element: <div>About Page</div> },
+        ],
+      },
+    ]);
+
+    render(<RouterProvider router={router} />);
+
+    // Check initial page (Home)
+    expect(screen.getByText(/Welcome/i)).toBeInTheDocument();
+
+    // Simulate navigation to Shop page
+    fireEvent.click(screen.getByText(/shop/i));
+
+    // Check that the Shop page renders
+    expect(await screen.findByText(/Shop Page/i)).toBeInTheDocument();
+
+    // Simulate navigation to About page
+    fireEvent.click(screen.getByText(/about/i));
+
+    // Check that the About page renders
+    expect(await screen.findByText(/About Page/i)).toBeInTheDocument();
+  });
+
+  test("shows filtered products based on search query", async () => {
+    // Mock the API call to fetch inventory
+    require("../src/api/api").fetchInventory.mockResolvedValue([
+      {
+        id: 1,
+        animalType: "Frog",
+        tags: ["cute", "green"],
+        stock: [
+          { sku: "frog001", size: "M", quantity: 10 },
+          { sku: "frog002", size: "L", quantity: 5 },
+        ],
+      },
+      {
+        id: 2,
+        animalType: "Cat",
+        tags: ["cute", "fluffy"],
+        stock: [
+          { sku: "cat001", size: "M", quantity: 20 },
+          { sku: "cat002", size: "L", quantity: 8 },
+        ],
+      },
+    ]);
+
     render(<App />);
 
+    // Wait for the data to be fetched and for the component to render
     await waitFor(() =>
-      expect(screen.queryByText(/loading/i)).not.toBeInTheDocument()
+      expect(screen.getByAltText("Cute frog head icon.")).toBeInTheDocument()
     );
 
-    const searchInput = screen.getByPlaceholderText(/search by animal/i);
+    // Ensure the search input is rendered
+    const searchInput = screen.getByPlaceholderText(/search/i);
+    expect(searchInput).toBeInTheDocument();
 
-    await userEvent.type(searchInput, "lion");
+    // Simulate typing "frog" into the search bar
+    fireEvent.change(searchInput, { target: { value: "frog" } });
 
-    // You would check filtered products passed to Outlet or visible in UI
-    // Depending on your Outlet implementation, you might need to mock it.
+    // Wait for the filtered product to appear
+    await waitFor(() => {
+      console.log(screen.getByText(/frog/i)); // Log the element
+      expect(screen.getByText(/frog/i)).toBeInTheDocument(); // Check if the product appears
+    });
   });
 });

@@ -1,4 +1,4 @@
-import PricingConfig from "../utils/PricingConfig";
+import PricingConfig from "../src/utils/PricingConfig";
 
 describe("PricingConfig", () => {
   it("returns no discount when stockNumber is 0", () => {

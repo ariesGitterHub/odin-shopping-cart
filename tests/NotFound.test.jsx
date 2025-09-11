@@ -1,4 +1,3 @@
-// tests/NotFound.test.jsx
 import { render, screen } from "@testing-library/react";
 import { MemoryRouter } from "react-router-dom";
 import NotFound from "../src/pages/NotFound";

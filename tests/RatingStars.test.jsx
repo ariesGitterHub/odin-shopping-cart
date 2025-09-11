@@ -1,5 +1,5 @@
 import { render, screen } from "@testing-library/react";
-import RatingStars from "../utils/RatingStars"; // Adjust the path as needed
+import RatingStars from "../src/utils/RatingStars"; // Adjust the path as needed
 
 describe("RatingStars", () => {
   it("renders 5 full stars for rating 5", () => {
