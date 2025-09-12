@@ -9,6 +9,7 @@
   --gold-lt: #ffe463;
   --gold: #eec144;
   --white: #ffffff;
+  --focus-blue: #4d90fe;
 
   --font-title: "Slackey", sans-serif;
   --font-text: "Rubik", sans-serif;
@@ -32,6 +33,31 @@
 *::after {
   box-sizing: border-box;
 }
+
+/* Generic focus-visible outline for accessibility */
+:focus-visible {
+  outline: 4px dashed var(--focus-blue);
+  outline-offset: 2px;
+}
+
+/* Optional: Add a border or change color for specific elements (like buttons) */
+button:focus-visible, a:focus-visible {
+  outline: 4px dashed var(--focus-blue);
+  outline-offset: 2px;
+}
+
+/* Optional: A subtle shadow to provide a nice effect */
+input:focus-visible {
+  outline: none;  /* Remove default outline */
+box-shadow: 0 0 0 4px var(--gold);
+}
+
+/* Optional: Focus on links */
+a:focus-visible {
+  outline: 4px dashed var(--focus-blue);
+  outline-offset: 4px;
+}
+
 
 html,
 body {

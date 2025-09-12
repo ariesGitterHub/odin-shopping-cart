@@ -9,7 +9,7 @@
   justify-content: center;
   background-color: var(--rose-dk);
   margin: 0 auto;
-  padding: 0.5rem;
+  padding: 0.75rem;
   z-index: 20;
 }
 
@@ -57,8 +57,8 @@
   justify-content: center;
   border-radius: 2rem;
   font-family: var(--font-text);
-  margin: 0.5rem;
-  padding: 0.5rem;
+  margin-top: 0.5rem;
+  padding: 0.25rem;
 }
 
 .search {

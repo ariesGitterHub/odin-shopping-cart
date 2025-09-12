@@ -1,15 +1,9 @@
-// NOTE - Last minute addition below is to add localStorage to bug wherein using keyboard tabbing to shopping-cart link and hitting enter causes a re-render and empties cart accidentally
-
 import { createContext, useState, useEffect } from "react";
 
 const CartContext = createContext();
 
 export function CartProvider({ children }) {
-  // Initialize cartItems from localStorage or default to an empty array
-  const [cartItems, setCartItems] = useState(() => {
-    const savedCart = localStorage.getItem("cartItems");
-    return savedCart ? JSON.parse(savedCart) : [];
-  });
+  const [cartItems, setCartItems] = useState([]);
 
   function handleAddToCart({
     id,
@@ -72,11 +66,12 @@ export function CartProvider({ children }) {
     );
   }
 
-  // Save cartItems to localStorage whenever they change
   useEffect(() => {
-    if (cartItems.length > 0) {
-      localStorage.setItem("cartItems", JSON.stringify(cartItems));
-    }
+    console.log("[CartContext] Current cartItems:", cartItems);
+  }, [cartItems]);
+
+  useEffect(() => {
+    console.log("[CartContext] Current cartItems:", cartItems.length);
   }, [cartItems]);
 
   return (
@@ -87,5 +82,11 @@ export function CartProvider({ children }) {
     </CartContext.Provider>
   );
 }
+
+// This is a custom hook...
+// NOTE - Below was moved to its own file after installing eslint to autofix import order
+// export function useCart() {
+//   return useContext(CartContext);
+// }
 
 export { CartContext };
