@@ -99,13 +99,12 @@
   border-radius: 0.5rem;
   color: var(--frog-black);
   font-size: 0.9rem;
-  object-fit: contain;
   padding-top: 0.25rem;
   padding-bottom: 0.25rem;
 }
 
 .image {
-  height: 10rem;
+  height: 9rem;
   width: auto;
   object-fit: contain;
 }
